@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Backups e temporários do Excel
+*BACKUP*.xlsx
+~$*.xlsx
+~$*.docx
+
+# SO / editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
