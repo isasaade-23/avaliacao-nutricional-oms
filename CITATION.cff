@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+title: "Avaliação Nutricional Infantil — OMS / SISVAN"
+message: "Se este projeto for útil no seu trabalho, por favor cite-o."
+type: software
+authors:
+  - given-names: Isabela
+    family-names: Saade
+repository-code: "https://github.com/isasaade-23/avaliacao-nutricional-oms"
+abstract: >-
+  Duas planilhas Excel (sem macros) que calculam os escores-z da OMS
+  (método LMS, WHO Anthro 2006 e AnthroPlus 2007) e o diagnóstico
+  nutricional SISVAN de crianças e adolescentes de 0 a 19 anos, com
+  acompanhamento longitudinal, para apoiar a vigilância nutricional em
+  creches, escolas e serviços de saúde.
+keywords:
+  - nutritional assessment
+  - anthropometry
+  - WHO growth standards
+  - z-scores
+  - child health
+  - public health
+  - SISVAN
+license: MIT
+version: "1.0.0"
+date-released: "2026-07-19"
