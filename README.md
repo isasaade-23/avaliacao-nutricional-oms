@@ -197,7 +197,7 @@ Este projeto é distribuído sob a licença [CC BY-NC-SA 4.0](LICENSE). Você po
 
 ## Quem produziu
 
-Este projeto foi desenvolvido por Isabela Saade.
+Este projeto foi desenvolvido por Isabela Venancio, com auxílio do modelo Sonnet da Anthropic para parte do código e da documentação.
 
 - [Currículo Lattes](http://lattes.cnpq.br/7006765766090773)
 - [LinkedIn](https://www.linkedin.com/in/isabela-venancio-67530a260/)
