@@ -6,10 +6,12 @@
 
 [🇧🇷 Português](README.md) · [🇺🇸 English](README.en.md) · 🇪🇸 **Español**
 
-![Licencia MIT](https://img.shields.io/badge/licencia-MIT-green)
+[![Licencia CC BY-NC-SA 4.0](https://img.shields.io/badge/licencia-CC%20BY--NC--SA%204.0-green)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 ![Hecho con Python](https://img.shields.io/badge/hecho%20con-Python-blue)
 ![Estándar OMS](https://img.shields.io/badge/est%C3%A1ndar-WHO%20Anthro%20%2F%20AnthroPlus-orange)
 ![Sin macros](https://img.shields.io/badge/Excel-sin%20macros-lightgrey)
+[![Sponsor](https://img.shields.io/badge/apoyar-GitHub%20Sponsors-EA4AAA?logo=github-sponsors)](https://github.com/sponsors/isasaade-23)
+[![Ko-fi](https://img.shields.io/badge/apoyar-Ko--fi-FF5E5B?logo=ko-fi&logoColor=white)](https://ko-fi.com/ailuciola)
 
 </div>
 
@@ -127,6 +129,8 @@ Si este proyecto te resulta útil, una cita es muy bienvenida 🙏 (mira el bot�
 
 > Saade, I. (2026). *Evaluación Nutricional Infantil — OMS / SISVAN* [software]. https://github.com/isasaade-23/avaliacao-nutricional-oms
 
+Si quieres apoyar el mantenimiento del proyecto, es totalmente opcional — vía [GitHub Sponsors](https://github.com/sponsors/isasaade-23), [Ko-fi](https://ko-fi.com/ailuciola) o Pix (Brasil, clave: isasaade23@gmail.com).
+
 ---
 
 ## 🔒 Privacidad
@@ -137,4 +141,4 @@ Son **datos de salud de menores**. Usa el **ID/número de registro** como clave,
 
 ## 📄 Licencia
 
-Distribuido bajo la **[Licencia MIT](LICENSE)**: puedes **usar, copiar, modificar, distribuir y vender**, incluso comercialmente, de forma gratuita. Solo pido que **conserves el aviso de autoría** y, si puedes, **cites el proyecto** — me ayuda mucho. 💚
+Distribuido bajo **[CC BY-NC-SA 4.0](LICENSE)**: puedes **usar, copiar, modificar y distribuir** libremente, incluso en guarderías, escuelas y servicios de salud. Las condiciones son: **conservar el aviso de autoría**, **no venderlo** (ni el original ni versiones modificadas) y, si lo adaptas, **redistribuirlo bajo la misma licencia**. Si puedes, **cita el proyecto** — me ayuda mucho. 💚

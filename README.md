@@ -6,10 +6,12 @@
 
 🇧🇷 **Português** · [🇺🇸 English](README.en.md) · [🇪🇸 Español](README.es.md)
 
-![Licença MIT](https://img.shields.io/badge/licen%C3%A7a-MIT-green)
+[![Licença CC BY-NC-SA 4.0](https://img.shields.io/badge/licen%C3%A7a-CC%20BY--NC--SA%204.0-green)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 ![Feito com Python](https://img.shields.io/badge/feito%20com-Python-blue)
 ![Padrão OMS](https://img.shields.io/badge/padr%C3%A3o-WHO%20Anthro%20%2F%20AnthroPlus-orange)
 ![Sem macros](https://img.shields.io/badge/Excel-sem%20macros-lightgrey)
+[![Sponsor](https://img.shields.io/badge/apoiar-GitHub%20Sponsors-EA4AAA?logo=github-sponsors)](https://github.com/sponsors/isasaade-23)
+[![Ko-fi](https://img.shields.io/badge/apoiar-Ko--fi-FF5E5B?logo=ko-fi&logoColor=white)](https://ko-fi.com/ailuciola)
 
 </div>
 
@@ -127,6 +129,8 @@ Se este projeto for útil no seu trabalho, uma citação é muito bem-vinda 🙏
 
 > Saade, I. (2026). *Avaliação Nutricional Infantil — OMS / SISVAN* [software]. https://github.com/isasaade-23/avaliacao-nutricional-oms
 
+Se quiser apoiar a manutenção do projeto, é totalmente opcional — via [GitHub Sponsors](https://github.com/sponsors/isasaade-23), [Ko-fi](https://ko-fi.com/ailuciola) ou Pix (chave: isasaade23@gmail.com).
+
 ---
 
 ## 🔒 Privacidade (LGPD)
@@ -137,4 +141,4 @@ São **dados de saúde de menores**. Recomenda-se usar o **ID/Prontuário** como
 
 ## 📄 Licença
 
-Distribuído sob a **[Licença MIT](LICENSE)**: você pode **usar, copiar, modificar, distribuir e vender**, inclusive comercialmente, gratuitamente. Só peço que **mantenha o aviso de autoria** e, se puder, **cite o projeto** — vai me ajudar muito. 💚
+Distribuído sob a **[CC BY-NC-SA 4.0](LICENSE)**: você pode **usar, copiar, modificar e distribuir** livremente, inclusive em creches, escolas e serviços de saúde. As condições são: **manter o aviso de autoria**, **não vender** (nem o original nem versões modificadas) e, se você adaptar o projeto, **redistribuir sob a mesma licença**. Se puder, **cite o projeto** — vai me ajudar muito. 💚

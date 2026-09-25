@@ -298,9 +298,24 @@ def build_ficha(wb):
     ws["B5"] = "Nome:"; ws["B5"].font = Font(bold=True)
     ws["C5"] = '=IFERROR(INDEX(calc_Nome,MATCH(C4,calc_ID,0)),"")'
 
+    # situacao atual (ultima medicao), para nao precisar rolar a tabela
+    ws["B6"] = "Última medição:"; ws["B6"].font = Font(bold=True)
+    ws["C6"] = ('=IFERROR(TEXT(INDEX(calc_Data,MATCH(MAX(calc_seq),calc_seq,0)),"dd/mm/yyyy"),"")')
+    ws["B7"] = "Diagnóstico atual (IMC/idade):"; ws["B7"].font = Font(bold=True)
+    ws.merge_cells("C7:E7")
+    ws["C7"] = '=IFERROR(INDEX(calc_dIMC,MATCH(MAX(calc_seq),calc_seq,0)),"")'
+    ws["C7"].font = Font(bold=True, size=12)
+    ws["C7"].alignment = LEFT
+    for fill_color, cats in CAT_CORES.items():
+        for cat in cats:
+            ws.conditional_formatting.add("C7", CellIsRule(
+                operator="equal", formula=[f'"{cat}"'],
+                fill=PatternFill("solid", fgColor=fill_color),
+                font=Font(color=CAT_TXT[fill_color], bold=True, size=12)))
+
     # tabela historico
     htxt = ["#", "Data", "Z IMC/id", "Diagnóstico IMC/id", "Z Est/id", "Z Peso/id", "Z Peso/est"]
-    hrow = 8
+    hrow = 10
     for j, h in enumerate(htxt):
         c = ws.cell(row=hrow, column=2 + j, value=h)
         c.fill = HEAD_FILL; c.font = HEAD_FONT; c.alignment = CENTER; c.border = BORDER
@@ -332,7 +347,7 @@ def build_ficha(wb):
     chart.add_data(data, titles_from_data=True)
     chart.add_data(data2, titles_from_data=True)
     chart.set_categories(cats)
-    ws.add_chart(chart, "J8")
+    ws.add_chart(chart, f"J{hrow}")
     return ws
 
 
@@ -468,10 +483,13 @@ def build_consulta(wb):
     rr = 4
     for i, (rot, zk, dk) in enumerate(res):
         r = rr + i
-        ws.cell(row=r, column=6, value=rot).font = Font(bold=True)
+        destaque = (rot == "IMC/idade")  # indice mais usado: reforcar visualmente
+        ws.cell(row=r, column=6, value=rot).font = Font(bold=True, size=12 if destaque else 11)
         ws.cell(row=r, column=7, value=f"={H[zk]}").number_format = "0.00"
         if dk:
-            ws.cell(row=r, column=8, value=f"={H[dk]}")
+            dc = ws.cell(row=r, column=8, value=f"={H[dk]}")
+            if destaque:
+                dc.font = Font(bold=True, size=13)
     ws.cell(row=3, column=6, value="Resultado").font = Font(bold=True, color=AZUL, size=13)
     ws.cell(row=3, column=7, value="escore-z").font = SUB_FONT
     ws.cell(row=3, column=8, value="diagnostico").font = SUB_FONT
@@ -515,20 +533,38 @@ def build_painel(wb):
         ws.cell(row=r, column=4, value=f'=IFERROR(C{r}/$E$5,0)').number_format = "0.0%"
     nlast = 9 + len(cats_imc) - 1
 
-    # indicadores-chave
+    # indicadores-chave (com sinalizacao por cor: verde/amarelo/vermelho por faixa
+    # de referencia aproximada, para leitura imediata sem precisar interpretar %)
     ws["B18"] = "Indicadores-chave"; ws["B18"].font = Font(bold=True, color=AZUL, size=13)
     ind = [
         ("Excesso de peso (sobrepeso+obesidade) %",
-         '=IFERROR((COUNTIF(calc_dIMC,"Sobrepeso")+COUNTIF(calc_dIMC,"Obesidade")+COUNTIF(calc_dIMC,"Obesidade grave"))/$E$5,0)'),
+         '=IFERROR((COUNTIF(calc_dIMC,"Sobrepeso")+COUNTIF(calc_dIMC,"Obesidade")+COUNTIF(calc_dIMC,"Obesidade grave"))/$E$5,0)',
+         0.10, 0.20),
         ("Magreza (magreza+magreza acentuada) %",
-         '=IFERROR((COUNTIF(calc_dIMC,"Magreza")+COUNTIF(calc_dIMC,"Magreza acentuada"))/$E$5,0)'),
+         '=IFERROR((COUNTIF(calc_dIMC,"Magreza")+COUNTIF(calc_dIMC,"Magreza acentuada"))/$E$5,0)',
+         0.05, 0.10),
         ("Baixa estatura para idade %",
-         '=IFERROR((COUNTIF(calc_dEst,"Baixa")+COUNTIF(calc_dEst,"Muito baixa"))/SUMPRODUCT(--(calc_dEst<>"")),0)'),
+         '=IFERROR((COUNTIF(calc_dEst,"Baixa")+COUNTIF(calc_dEst,"Muito baixa"))/SUMPRODUCT(--(calc_dEst<>"")),0)',
+         0.05, 0.10),
     ]
-    for i, (rot, fml) in enumerate(ind):
+    for i, (rot, fml, corte_verde, corte_amarelo) in enumerate(ind):
         r = 19 + i
         ws.cell(row=r, column=2, value=rot)
-        ws.cell(row=r, column=5, value=fml).number_format = "0.0%"
+        cell = ws.cell(row=r, column=5, value=fml)
+        cell.number_format = "0.0%"
+        rng = f"E{r}"
+        ws.conditional_formatting.add(rng, CellIsRule(
+            operator="lessThan", formula=[str(corte_verde)],
+            fill=PatternFill("solid", fgColor=VERDE_F), font=Font(color=VERDE_T)))
+        ws.conditional_formatting.add(rng, CellIsRule(
+            operator="between", formula=[str(corte_verde), str(corte_amarelo)],
+            fill=PatternFill("solid", fgColor=AMAR_F), font=Font(color=AMAR_T)))
+        ws.conditional_formatting.add(rng, CellIsRule(
+            operator="greaterThan", formula=[str(corte_amarelo)],
+            fill=PatternFill("solid", fgColor=VERM_F), font=Font(color=VERM_T)))
+    ws.cell(row=19 + len(ind) + 1, column=2,
+            value="Cores: referência aproximada para triagem rápida (verde/amarelo/vermelho), "
+                  "não substitui avaliação clínica.").font = SUB_FONT
 
     for col, w in zip("BCDE", [42, 8, 8, 10]):
         ws.column_dimensions[col].width = w
@@ -554,31 +590,25 @@ def build_instr(wb):
         ("Avaliação Nutricional Infantil (0 a 19 anos) — OMS / SISVAN", "t"),
         ("Calculadora de escores-z e diagnóstico nutricional (padrão OMS 2006/2007).", "s"),
         ("", ""),
-        ("COMO USAR (2 arquivos):", "h"),
-        ("1) Digite ou cole as medições no arquivo BD_AvaliacaoNutricional.xlsx (aba Dados). "
-         "Cada linha = uma medição. Para acompanhar uma criança ao longo do tempo, use sempre o "
-         "MESMO ID/Prontuário e acrescente uma nova linha a cada retorno.", "p"),
-        ("2) Abra esta Calculadora: ela PUXA o banco automaticamente. Na primeira vez, clique em "
-         "'Habilitar Conteúdo' (e, se aparecer, em 'Habilitar' as conexões de dados). Os escores-z "
-         "e diagnósticos aparecem na aba CÁLCULO, com cores.", "p"),
-        ("   Depois de mudar o banco, atualize em Dados > Atualizar Tudo (ou feche e abra de novo).", "p"),
-        ("3) Aba FICHA: escolha o ID para ver o histórico e a curva de evolução da criança.", "p"),
-        ("4) Aba CONSULTA: cálculo avulso de uma criança, sem mexer no banco.", "p"),
-        ("5) Aba PAINEL: resumo da turma/unidade (distribuição e indicadores).", "p"),
+        ("COMO USAR — 3 PASSOS", "h"),
+        ("1. Digite as medições", "n"),
+        ("No arquivo BD_AvaliacaoNutricional.xlsx, aba Dados: uma linha por medição. "
+         "Use sempre o mesmo ID/Prontuário para acompanhar a mesma criança ao longo do tempo.", "p"),
+        ("2. Abra a Calculadora", "n"),
+        ("Ela puxa o banco sozinha. Na primeira vez, clique em 'Habilitar Conteúdo'. "
+         "Depois de mudar o banco, atualize em Dados > Atualizar Tudo.", "p"),
+        ("3. Veja os resultados", "n"),
+        ("CÁLCULO traz tudo calculado e colorido · FICHA mostra o histórico de uma criança · "
+         "CONSULTA faz um cálculo avulso · PAINEL resume a turma/unidade.", "p"),
         ("", ""),
-        ("DICAS:", "h"),
-        ("• Preencha a Data de nascimento E a Data da medida: a idade é calculada sozinha.", "p"),
-        ("• A coluna Medida (Deitado/Em pé) é opcional: até 2 anos mede-se deitado (comprimento), "
-         "a partir de 2 anos em pé (estatura). Se for preenchida diferente do padrão, aplica-se "
-         "automaticamente o ajuste de 0,7 cm da OMS.", "p"),
-        ("• Você só digita no BANCO. Na Calculadora, as colunas azuis (A–H) vêm do banco e as "
-         "cinza são cálculos — não edite nenhuma delas.", "p"),
-        ("• A Calculadora vem pronta para 1500 medições. Para mais, selecione a última linha de "
-         "fórmulas da aba Cálculo e arraste para baixo.", "p"),
-        ("• Peso/idade vai só até 10 anos e Peso/estatura só até 5 anos (padrão OMS); "
+        ("DICAS IMPORTANTES:", "h"),
+        ("• Mantenha os dois arquivos na MESMA PASTA local do computador (evite OneDrive/Drive).", "p"),
+        ("• Preencha Data de nascimento e Data da medida — a idade é calculada sozinha.", "p"),
+        ("• Você só digita no BANCO. Na Calculadora, não edite as colunas cinza (são cálculos).", "p"),
+        ("• Peso/idade só até 10 anos e Peso/estatura só até 5 anos (padrão OMS); "
          "fora dessas faixas aparece o símbolo —.", "p"),
-        ("• Mantenha os dois arquivos na MESMA PASTA (a Calculadora acha o banco sozinha). "
-         "Se precisar mover, mova os dois juntos.", "p"),
+        ("Outros detalhes (medida deitado/em pé, mais de 1500 medições, etc.) estão no "
+         "Guia rápido — Avaliação Nutricional.docx.", "s"),
         ("", ""),
         ("CLASSIFICAÇÃO (SISVAN / Ministério da Saúde):", "h"),
         ("IMC/idade < 5 anos:  < -3 Magreza acentuada | -3 a < -2 Magreza | -2 a +1 Eutrofia | "
@@ -598,6 +628,7 @@ def build_instr(wb):
         if kind == "t": c.font = TITLE_FONT
         elif kind == "s": c.font = SUB_FONT
         elif kind == "h": c.font = Font(bold=True, color=AZUL, size=12)
+        elif kind == "n": c.font = Font(bold=True, color=AZUL2, size=12)
         else: c.font = Font(size=11)
         c.alignment = Alignment(wrap_text=True, vertical="top")
         ws.row_dimensions[r].height = 30 if len(txt) > 90 else 16

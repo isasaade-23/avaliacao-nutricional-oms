@@ -6,10 +6,12 @@
 
 [🇧🇷 Português](README.md) · 🇺🇸 **English** · [🇪🇸 Español](README.es.md)
 
-![MIT License](https://img.shields.io/badge/license-MIT-green)
+[![CC BY-NC-SA 4.0 License](https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-green)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 ![Made with Python](https://img.shields.io/badge/made%20with-Python-blue)
 ![WHO standard](https://img.shields.io/badge/standard-WHO%20Anthro%20%2F%20AnthroPlus-orange)
 ![No macros](https://img.shields.io/badge/Excel-no%20macros-lightgrey)
+[![Sponsor](https://img.shields.io/badge/support-GitHub%20Sponsors-EA4AAA?logo=github-sponsors)](https://github.com/sponsors/isasaade-23)
+[![Ko-fi](https://img.shields.io/badge/support-Ko--fi-FF5E5B?logo=ko-fi&logoColor=white)](https://ko-fi.com/ailuciola)
 
 </div>
 
@@ -127,6 +129,8 @@ If this project is useful in your work, a citation is very welcome 🙏 (see the
 
 > Saade, I. (2026). *Child Nutritional Assessment — WHO / SISVAN* [software]. https://github.com/isasaade-23/avaliacao-nutricional-oms
 
+If you'd like to support the project's upkeep, it's entirely optional — via [GitHub Sponsors](https://github.com/sponsors/isasaade-23), [Ko-fi](https://ko-fi.com/ailuciola), or Pix (Brazil, key: isasaade23@gmail.com).
+
 ---
 
 ## 🔒 Privacy
@@ -137,4 +141,4 @@ This is **children's health data**. Use the **ID/record number** as the key, kee
 
 ## 📄 License
 
-Released under the **[MIT License](LICENSE)**: you may **use, copy, modify, distribute and sell**, including commercially, for free. I only ask that you **keep the copyright notice** and, if you can, **cite the project** — it helps a lot. 💚
+Released under **[CC BY-NC-SA 4.0](LICENSE)**: you may **use, copy, modify and distribute** freely, including in daycare centers, schools and health services. Conditions: **keep the attribution notice**, **do not sell** it (original or modified versions), and if you adapt the project, **share it under the same license**. If you can, **cite the project** — it helps a lot. 💚
