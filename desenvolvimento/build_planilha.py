@@ -20,6 +20,7 @@ from openpyxl.formatting.rule import CellIsRule
 from openpyxl.chart import LineChart, BarChart, Reference
 
 DIR = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(DIR)  # raiz do repositorio, onde os .xlsx entregaveis ficam
 TAB = os.path.join(DIR, "tabelas_oms")
 N = 1500                      # linhas de dados na aba Calculo
 DASH = "—"              # em dash para "fora de faixa"
@@ -715,12 +716,12 @@ def main():
         wb.calculation.fullCalcOnLoad = True   # recalcula ao abrir
     except Exception:
         pass
-    out1 = os.path.join(DIR, "Calculadora_OMS.xlsx")
+    out1 = os.path.join(ROOT, "Calculadora_OMS.xlsx")
     wb.save(out1)
     print(f"OK -> {out1}")
 
     bd = build_bd()
-    out2 = os.path.join(DIR, "BD_AvaliacaoNutricional.xlsx")
+    out2 = os.path.join(ROOT, "BD_AvaliacaoNutricional.xlsx")
     bd.save(out2)
     print(f"OK -> {out2}")
 

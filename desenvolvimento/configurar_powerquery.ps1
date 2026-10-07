@@ -2,7 +2,7 @@
 # Rode SEMPRE depois de (re)gerar a planilha com: python build_planilha.py
 # Uso:  powershell -ExecutionPolicy Bypass -File configurar_powerquery.ps1
 
-$Calc = Join-Path $PSScriptRoot "Calculadora_OMS.xlsx"
+$Calc = Join-Path (Split-Path $PSScriptRoot -Parent) "Calculadora_OMS.xlsx"
 if (-not (Test-Path $Calc)) { Write-Output "Nao achei Calculadora_OMS.xlsx. Rode antes: python build_planilha.py"; return }
 
 # Consulta M: le o caminho do banco da celula 'caminho_bd' (mesma pasta) e importa a aba Dados

@@ -2,7 +2,9 @@
 
 # Avaliação Nutricional Infantil, padrão OMS e SISVAN
 
-**Duas planilhas em Excel, sem macros, que calculam os escores-z da OMS e o diagnóstico nutricional de crianças e adolescentes de 0 a 19 anos.** Apoiam o acompanhamento em creches, escolas e serviços de saúde.
+**Ferramenta para avaliação e acompanhamento nutricional de crianças e adolescentes de 0 a 19 anos, segundo os padrões da OMS e os critérios do SISVAN.**
+
+Funciona no Excel, sem macros, totalmente offline e é gratuita.
 
 🇧🇷 **Português** · [🇺🇸 English](README.en.md) · [🇪🇸 Español](README.es.md)
 
@@ -19,20 +21,23 @@
 
 ---
 
+## Comece aqui
+
+Se você só quer usar a ferramenta, não precisa entender GitHub nem programação. Clique no botão verde de baixar ZIP acima, extraia o arquivo e você vai encontrar dois arquivos Excel dentro da pasta. Um é a calculadora, o outro é onde você registra as medições das crianças. As seções [Como baixar](#como-baixar) e [Como usar](#como-usar) explicam cada passo em detalhe.
+
+---
+
 ## Sumário
 
 - [Para que serve](#para-que-serve)
 - [Como baixar](#como-baixar)
 - [Como usar](#como-usar)
-- [Recursos](#recursos)
 - [Índices e classificação](#índices-e-classificação)
 - [Perguntas frequentes](#perguntas-frequentes)
 - [Como citar](#como-citar)
-- [Privacidade](#privacidade)
-- [Licença](#licença)
+- [Privacidade e licença](#privacidade-e-licença)
 - [Detalhes técnicos](#detalhes-técnicos)
-- [Quem produziu](#quem-produziu)
-- [Tem alguma sugestão?](#tem-alguma-sugestão)
+- [Quem produziu e contato](#quem-produziu-e-contato)
 
 ---
 
@@ -40,9 +45,7 @@
 
 Acompanhar o estado nutricional de crianças ao longo do tempo costuma ser trabalhoso, pois exige consultar as tabelas da OMS, calcular escores-z à mão e classificar o resultado segundo o SISVAN. Por isso, muitas vezes esse acompanhamento não é feito, ou é feito com erro.
 
-Nesta ferramenta, você digita peso, altura e datas em um banco de dados, e a calculadora devolve os escores-z e o diagnóstico nutricional na hora, já com cores. Também dá para acompanhar a mesma criança ao longo dos meses e ver a curva de crescimento, além de ver o resumo da turma ou da unidade.
-
-Não é preciso instalar nada além do Excel. A planilha não usa macros e não envia nenhum dado para a internet.
+Nesta ferramenta, você digita peso, altura e datas em um arquivo de dados, e a calculadora devolve os escores-z e a classificação do estado nutricional na hora, já com cores. Também dá para acompanhar a mesma criança ao longo dos meses, ver a curva de crescimento e ver o resumo da turma ou da unidade.
 
 ---
 
@@ -62,26 +65,15 @@ Dentro da pasta extraída, só dois arquivos interessam para o uso diário. São
 
 Guarde os dois arquivos juntos em uma pasta local do computador, como `C:\AvaliacaoNutricional`. Evite o OneDrive e o Google Drive, porque o Excel só consegue ligar as duas planilhas quando elas estão em uma pasta local.
 
-Abra o `BD_AvaliacaoNutricional.xlsx` e digite as medições na aba Dados, uma linha para cada medição. Use sempre o mesmo ID ou número de prontuário para acompanhar a mesma criança ao longo do tempo. Depois salve e feche o arquivo.
+Abra o arquivo de dados (`BD_AvaliacaoNutricional.xlsx`) e digite as medições na aba Dados, uma linha para cada medição. Use sempre o mesmo ID ou número de prontuário para acompanhar a mesma criança ao longo do tempo. Depois salve e feche o arquivo.
 
-Abra o `Calculadora_OMS.xlsx`. Na primeira vez, clique em "Habilitar Conteúdo" na barra amarela do topo. Os resultados aparecem na aba CÁLCULO, já com cores. A aba FICHA mostra o histórico de uma criança, e a aba PAINEL mostra o resumo da turma.
-
----
-
-## Recursos
-
-- Quatro índices da OMS, que são IMC por idade, Estatura por idade, Peso por idade e Peso por estatura.
-- Diagnóstico automático com cores, seguindo o SISVAN e o Ministério da Saúde. O verde indica estado adequado, o amarelo indica atenção e o vermelho indica déficit ou excesso.
-- Histórico de cada criança, com a curva de escores-z ao longo do tempo.
-- Painel com o resumo da turma ou da unidade.
-- Ligação automática entre o banco e a calculadora, sem precisar copiar dados na mão.
-- Fórmulas conferidas contra o pacote R oficial da OMS.
+Abra a calculadora (`Calculadora_OMS.xlsx`). Na primeira vez, clique em "Habilitar Conteúdo" na barra amarela do topo. Os resultados aparecem na aba CÁLCULO, já com cores. A aba FICHA mostra o histórico de uma criança, e a aba PAINEL mostra o resumo da turma.
 
 ---
 
 ## Índices e classificação
 
-As categorias seguem os cortes do SISVAN e do Ministério da Saúde.
+A ferramenta calcula quatro índices antropométricos da OMS, que são IMC por idade, Estatura por idade, Peso por idade e Peso por estatura. As categorias de cada um seguem os cortes do SISVAN e do Ministério da Saúde, e aparecem com cor no resultado. O verde indica estado adequado, o amarelo indica atenção e o vermelho indica déficit ou excesso.
 
 | Índice | Faixa etária | Categorias (por escore-z) |
 |---|---|---|
@@ -104,7 +96,7 @@ No Windows, clique com o botão direito sobre o arquivo baixado e escolha "Extra
 </details>
 
 <details>
-<summary>A calculadora não encontra o banco de dados</summary>
+<summary>A calculadora não encontra o arquivo de dados</summary>
 
 Isso costuma acontecer quando os dois arquivos não estão na mesma pasta, ou quando essa pasta está sincronizada com o OneDrive ou o Google Drive. Mova os dois arquivos juntos para uma pasta local, feche os dois arquivos e abra a calculadora de novo. Em seguida, na aba Dados do Excel, clique em "Atualizar Tudo".
 </details>
@@ -129,19 +121,13 @@ Se este projeto ajudar no seu trabalho, uma citação é bem-vinda. Use o botão
 
 > Saade, I. (2026). *Avaliação Nutricional Infantil, OMS e SISVAN* [software]. https://github.com/isasaade-23/avaliacao-nutricional-oms
 
-Apoiar o projeto é opcional, pelo [GitHub Sponsors](https://github.com/sponsors/isasaade-23), pelo [Ko-fi](https://ko-fi.com/ailuciola) ou por Pix, com a chave isasaade23@gmail.com.
-
 ---
 
-## Privacidade
+## Privacidade e licença
 
-São dados de saúde de menores. Use o ID ou o número de prontuário como chave, trate o nome como um campo opcional e guarde o banco em um local restrito. A ferramenta funciona inteiramente offline e não envia nenhum dado para a internet.
+São dados de saúde de menores. Use o ID ou o número de prontuário como chave, trate o nome como um campo opcional e guarde o arquivo em um local restrito. A ferramenta funciona inteiramente offline e não envia nenhum dado para a internet.
 
----
-
-## Licença
-
-Este projeto é distribuído sob a licença [CC BY-NC-SA 4.0](LICENSE). Você pode usar, copiar, modificar e distribuir o material livremente, inclusive em creches, escolas e serviços de saúde, desde que mantenha o aviso de autoria e não venda o material. Se você adaptar o projeto, redistribua a adaptação sob a mesma licença. 💚
+Este projeto é distribuído sob a licença [CC BY-NC-SA 4.0](LICENSE). Você pode usar, copiar, modificar e distribuir o material livremente, inclusive em creches, escolas e serviços de saúde, desde que mantenha o aviso de autoria e não venda o material. Se você adaptar o projeto, redistribua a adaptação sob a mesma licença.
 
 ---
 
@@ -158,44 +144,48 @@ Nessa fórmula, L, M e S são parâmetros que variam por sexo e idade, ou por se
 
 A planilha reproduz fielmente o WHO Anthro e o WHO AnthroPlus nos pontos a seguir. A idade é calculada em dias entre 0 e 5 anos, seguindo o WHO Anthro de 2006, e em meses entre 5 e 19 anos, seguindo o WHO Growth Reference de 2007. Os índices baseados em peso, que são IMC por idade, Peso por idade e Peso por estatura, recebem o ajuste da OMS quando o escore-z ultrapassa 3 em módulo, para evitar extrapolar além dos dados observados. Quando a forma de medir diverge do padrão para a idade, a planilha aplica o ajuste de 0,7 cm da OMS, usado quando uma criança com menos de 2 anos é medida em pé, ou quando uma criança com 2 anos ou mais é medida deitada. Por fim, a planilha usa apenas funções clássicas do Excel, como ÍNDICE, CORRESP e SE, e por isso funciona também em versões antigas, sem macros.
 
-Os dados de 0 a 5 anos vêm do WHO Child Growth Standards de 2006, publicado no pacote oficial [`anthro`](https://github.com/worldhealthorganization/anthro). Os dados de 5 a 19 anos vêm do WHO Growth Reference de 2007, publicado no pacote oficial [`anthroplus`](https://github.com/worldhealthorganization/anthroplus). Os arquivos originais da OMS ficam versionados na pasta `tabelas_oms/raw`, para preservar a procedência dos dados.
+Os dados de 0 a 5 anos vêm do WHO Child Growth Standards de 2006, publicado no pacote oficial [`anthro`](https://github.com/worldhealthorganization/anthro). Os dados de 5 a 19 anos vêm do WHO Growth Reference de 2007, publicado no pacote oficial [`anthroplus`](https://github.com/worldhealthorganization/anthroplus). Os arquivos originais da OMS ficam versionados na pasta `desenvolvimento/tabelas_oms/raw`, para preservar a procedência dos dados.
 
-A lógica de referência, no arquivo `zscore_ref.py`, é idêntica a uma implementação já validada contra o pacote R oficial da OMS em milhares de casos. Além disso, 16 casos de teste foram recalculados no Excel real e bateram com a referência, incluindo valores extremos e as bordas de idade em 0, 24, 60, 61, 120 e 228 meses.
+A lógica de referência, no arquivo `desenvolvimento/zscore_ref.py`, é idêntica a uma implementação já validada contra o pacote R oficial da OMS em milhares de casos. Além disso, 16 casos de teste foram recalculados no Excel real e bateram com a referência, incluindo valores extremos e as bordas de idade em 0, 24, 60, 61, 120 e 228 meses.
 </summary>
 </details>
 
 <details>
 <summary>Estrutura do projeto e como reconstruir os arquivos</summary>
 
+A raiz do repositório tem só os arquivos que quem usa a ferramenta precisa. O resto fica organizado em duas pastas.
+
 | Arquivo | Descrição |
 |---|---|
 | `Calculadora_OMS.xlsx` | Arquivo entregável, com as tabelas da OMS e as fórmulas |
-| `BD_AvaliacaoNutricional.xlsx` | Arquivo entregável, o banco de dados vazio, pronto para uso |
-| `Guia rápido — Avaliação Nutricional.docx` | Guia de uso em linguagem simples para a equipe |
-| `tabelas_oms/*.csv` | Tabelas LMS já limpas, usadas na construção da planilha |
-| `tabelas_oms/raw/*.txt` | Arquivos originais da OMS, mantidos para procedência |
-| `montar_tabelas.py` | Monta as tabelas LMS a partir dos arquivos da OMS |
-| `zscore_ref.py` | Implementação de referência, fonte única da lógica de cálculo |
-| `build_planilha.py` | Gera os dois arquivos `.xlsx` |
-| `configurar_powerquery.ps1` | Configura a ligação automática entre o banco e a calculadora |
-| `validate_ref.py` e `verify_*.py` | Scripts de validação, comparam a referência com o R e o Excel com a referência |
+| `BD_AvaliacaoNutricional.xlsx` | Arquivo entregável, o arquivo de dados vazio, pronto para uso |
+| `documentacao/Guia rápido — Avaliação Nutricional.docx` | Guia de uso em linguagem simples para a equipe |
+| `desenvolvimento/tabelas_oms/*.csv` | Tabelas LMS já limpas, usadas na construção da planilha |
+| `desenvolvimento/tabelas_oms/raw/*.txt` | Arquivos originais da OMS, mantidos para procedência |
+| `desenvolvimento/montar_tabelas.py` | Monta as tabelas LMS a partir dos arquivos da OMS |
+| `desenvolvimento/zscore_ref.py` | Implementação de referência, fonte única da lógica de cálculo |
+| `desenvolvimento/build_planilha.py` | Gera os dois arquivos `.xlsx` na raiz do repositório |
+| `desenvolvimento/configurar_powerquery.ps1` | Configura a ligação automática entre o arquivo de dados e a calculadora |
+| `desenvolvimento/validate_ref.py` e `desenvolvimento/verify_*.py` | Scripts de validação, comparam a referência com o R e o Excel com a referência |
+
+Os comandos a seguir rodam a partir da raiz do repositório.
 
 ```bash
-python montar_tabelas.py     # monta as tabelas LMS
-python build_planilha.py     # gera os dois .xlsx
-powershell -ExecutionPolicy Bypass -File configurar_powerquery.ps1   # liga o Power Query
+python desenvolvimento/montar_tabelas.py     # monta as tabelas LMS
+python desenvolvimento/build_planilha.py     # gera os dois .xlsx na raiz
+powershell -ExecutionPolicy Bypass -File desenvolvimento/configurar_powerquery.ps1   # liga o Power Query
 ```
 </details>
 
 ---
 
-## Quem produziu
+## Quem produziu e contato
 
 Este projeto foi desenvolvido por Isabela Venancio, com auxílio do modelo Sonnet da Anthropic para parte do código e da documentação.
 
 - [Currículo Lattes](http://lattes.cnpq.br/7006765766090773)
 - [LinkedIn](https://www.linkedin.com/in/isabela-venancio-67530a260/)
 
-## Tem alguma sugestão?
+Encontrou um problema ou tem uma sugestão? Me mande um e-mail. [isasaade23@gmail.com](mailto:isasaade23@gmail.com)
 
-Me mande um e-mail. [isasaade23@gmail.com](mailto:isasaade23@gmail.com)
+Apoiar a manutenção do projeto é opcional, pelo [GitHub Sponsors](https://github.com/sponsors/isasaade-23), pelo [Ko-fi](https://ko-fi.com/ailuciola) ou por Pix, com a chave isasaade23@gmail.com.

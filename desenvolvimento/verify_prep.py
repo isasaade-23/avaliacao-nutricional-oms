@@ -6,7 +6,8 @@ from openpyxl import load_workbook
 import zscore_ref as zr
 
 DIR = os.path.dirname(os.path.abspath(__file__))
-SRC = os.path.join(DIR, "Calculadora_OMS.xlsx")
+ROOT = os.path.dirname(DIR)  # raiz do repositorio, onde o .xlsx entregavel fica
+SRC = os.path.join(ROOT, "Calculadora_OMS.xlsx")
 TMP = os.path.join(DIR, "_verif_temp.xlsx")
 EXP = os.path.join(DIR, "_verif_expected.json")
 
