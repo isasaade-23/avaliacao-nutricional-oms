@@ -10,6 +10,9 @@ venv/
 ~$*.xlsx
 ~$*.docx
 
+# Scripts e dados de desenvolvimento (ficam só localmente)
+/desenvolvimento/
+
 # SO / editores
 .DS_Store
 Thumbs.db

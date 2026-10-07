@@ -23,7 +23,7 @@ Funciona no Excel, sem macros, totalmente offline e é gratuita.
 
 ## Comece aqui
 
-Se você só quer usar a ferramenta, não precisa entender GitHub nem programação. Clique no botão verde de baixar ZIP acima, extraia o arquivo e você vai encontrar dois arquivos Excel dentro da pasta. Um é a calculadora, o outro é onde você registra as medições das crianças. As seções [Como baixar](#como-baixar) e [Como usar](#como-usar) explicam cada passo em detalhe.
+Se você só quer usar a ferramenta, não precisa entender GitHub nem programação. Clique no botão verde de baixar ZIP acima, extraia o arquivo e você vai encontrar três arquivos dentro da pasta. Dois são Excel, um é a calculadora e o outro é onde você registra as medições das crianças. O terceiro é o [Guia rápido em PDF](Guia%20r%C3%A1pido%20%E2%80%94%20Avalia%C3%A7%C3%A3o%20Nutricional.pdf), com o passo a passo em linguagem simples, pronto para imprimir. As seções [Como baixar](#como-baixar) e [Como usar](#como-usar) explicam cada passo em detalhe.
 
 ---
 
@@ -57,7 +57,7 @@ Clique no botão verde "baixar arquivo ZIP" no topo desta página. O navegador s
 
 Esse arquivo vem compactado, então é preciso extraí-lo antes de usar. No Windows, clique com o botão direito sobre o arquivo baixado e escolha "Extrair tudo". No Mac, basta dar dois cliques sobre o arquivo, e o sistema extrai sozinho.
 
-Dentro da pasta extraída, só dois arquivos interessam para o uso diário. São eles `BD_AvaliacaoNutricional.xlsx` e `Calculadora_OMS.xlsx`. Guarde os dois juntos, como explica a seção seguinte.
+Dentro da pasta extraída, os arquivos que interessam para o uso diário são `BD_AvaliacaoNutricional.xlsx`, `Calculadora_OMS.xlsx` e o Guia rápido em PDF. Guarde os dois arquivos Excel juntos, como explica a seção seguinte, e deixe o guia à mão para consultar.
 
 ---
 
@@ -144,37 +144,10 @@ Nessa fórmula, L, M e S são parâmetros que variam por sexo e idade, ou por se
 
 A planilha reproduz fielmente o WHO Anthro e o WHO AnthroPlus nos pontos a seguir. A idade é calculada em dias entre 0 e 5 anos, seguindo o WHO Anthro de 2006, e em meses entre 5 e 19 anos, seguindo o WHO Growth Reference de 2007. Os índices baseados em peso, que são IMC por idade, Peso por idade e Peso por estatura, recebem o ajuste da OMS quando o escore-z ultrapassa 3 em módulo, para evitar extrapolar além dos dados observados. Quando a forma de medir diverge do padrão para a idade, a planilha aplica o ajuste de 0,7 cm da OMS, usado quando uma criança com menos de 2 anos é medida em pé, ou quando uma criança com 2 anos ou mais é medida deitada. Por fim, a planilha usa apenas funções clássicas do Excel, como ÍNDICE, CORRESP e SE, e por isso funciona também em versões antigas, sem macros.
 
-Os dados de 0 a 5 anos vêm do WHO Child Growth Standards de 2006, publicado no pacote oficial [`anthro`](https://github.com/worldhealthorganization/anthro). Os dados de 5 a 19 anos vêm do WHO Growth Reference de 2007, publicado no pacote oficial [`anthroplus`](https://github.com/worldhealthorganization/anthroplus). Os arquivos originais da OMS ficam versionados na pasta `desenvolvimento/tabelas_oms/raw`, para preservar a procedência dos dados.
+Os dados de 0 a 5 anos vêm do WHO Child Growth Standards de 2006, publicado no pacote oficial [`anthro`](https://github.com/worldhealthorganization/anthro). Os dados de 5 a 19 anos vêm do WHO Growth Reference de 2007, publicado no pacote oficial [`anthroplus`](https://github.com/worldhealthorganization/anthroplus). Os arquivos originais da OMS foram mantidos à parte, para preservar a procedência dos dados.
 
-A lógica de referência, no arquivo `desenvolvimento/zscore_ref.py`, é idêntica a uma implementação já validada contra o pacote R oficial da OMS em milhares de casos. Além disso, 16 casos de teste foram recalculados no Excel real e bateram com a referência, incluindo valores extremos e as bordas de idade em 0, 24, 60, 61, 120 e 228 meses.
+A lógica de referência foi validada contra o pacote R oficial da OMS em milhares de casos. Além disso, 16 casos de teste foram recalculados no Excel real e bateram com a referência, incluindo valores extremos e as bordas de idade em 0, 24, 60, 61, 120 e 228 meses. Os scripts de construção e de validação não ficam neste repositório, mas quem quiser auditar o cálculo pode escrever para o e-mail da seção [Quem produziu e contato](#quem-produziu-e-contato).
 </summary>
-</details>
-
-<details>
-<summary>Estrutura do projeto e como reconstruir os arquivos</summary>
-
-A raiz do repositório tem só os arquivos que quem usa a ferramenta precisa. O resto fica organizado em duas pastas.
-
-| Arquivo | Descrição |
-|---|---|
-| `Calculadora_OMS.xlsx` | Arquivo entregável, com as tabelas da OMS e as fórmulas |
-| `BD_AvaliacaoNutricional.xlsx` | Arquivo entregável, o arquivo de dados vazio, pronto para uso |
-| `documentacao/Guia rápido — Avaliação Nutricional.docx` | Guia de uso em linguagem simples para a equipe |
-| `desenvolvimento/tabelas_oms/*.csv` | Tabelas LMS já limpas, usadas na construção da planilha |
-| `desenvolvimento/tabelas_oms/raw/*.txt` | Arquivos originais da OMS, mantidos para procedência |
-| `desenvolvimento/montar_tabelas.py` | Monta as tabelas LMS a partir dos arquivos da OMS |
-| `desenvolvimento/zscore_ref.py` | Implementação de referência, fonte única da lógica de cálculo |
-| `desenvolvimento/build_planilha.py` | Gera os dois arquivos `.xlsx` na raiz do repositório |
-| `desenvolvimento/configurar_powerquery.ps1` | Configura a ligação automática entre o arquivo de dados e a calculadora |
-| `desenvolvimento/validate_ref.py` e `desenvolvimento/verify_*.py` | Scripts de validação, comparam a referência com o R e o Excel com a referência |
-
-Os comandos a seguir rodam a partir da raiz do repositório.
-
-```bash
-python desenvolvimento/montar_tabelas.py     # monta as tabelas LMS
-python desenvolvimento/build_planilha.py     # gera os dois .xlsx na raiz
-powershell -ExecutionPolicy Bypass -File desenvolvimento/configurar_powerquery.ps1   # liga o Power Query
-```
 </details>
 
 ---
