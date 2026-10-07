@@ -119,7 +119,7 @@ Essa barra aparece porque o arquivo se conecta a outro arquivo do computador. Cl
 
 Se este projeto ajudar no seu trabalho, uma citação é bem-vinda. Use o botão "Cite this repository" no GitHub, ou o arquivo [`CITATION.cff`](CITATION.cff).
 
-> Saade, I. (2026). *Avaliação Nutricional Infantil, OMS e SISVAN* [software]. https://github.com/isasaade-23/avaliacao-nutricional-oms
+> Venancio da Silva, I. (2026). *Avaliação Nutricional Infantil, OMS e SISVAN* [software]. https://github.com/isasaade-23/avaliacao-nutricional-oms
 
 ---
 
@@ -154,7 +154,7 @@ A lógica de referência foi validada contra o pacote R oficial da OMS em milhar
 
 ## Quem produziu e contato
 
-Este projeto foi desenvolvido por Isabela Venancio, com auxílio do modelo Sonnet da Anthropic para parte do código e da documentação.
+Este projeto foi desenvolvido por Isabela Venancio da Silva, com auxílio do modelo Sonnet da Anthropic para parte do código e da documentação.
 
 - [Currículo Lattes](http://lattes.cnpq.br/7006765766090773)
 - [LinkedIn](https://www.linkedin.com/in/isabela-venancio-67530a260/)

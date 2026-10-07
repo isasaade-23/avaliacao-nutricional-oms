@@ -4,7 +4,7 @@ message: "Se este projeto for útil no seu trabalho, por favor cite-o."
 type: software
 authors:
   - given-names: Isabela
-    family-names: Saade
+    family-names: Venancio da Silva
 repository-code: "https://github.com/isasaade-23/avaliacao-nutricional-oms"
 abstract: >-
   Duas planilhas Excel (sem macros) que calculam os escores-z da OMS
