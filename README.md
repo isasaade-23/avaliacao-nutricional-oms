@@ -59,9 +59,9 @@ A calculadora é um arquivo único, em três versões com o mesmo conteúdo. Esc
 |---|---|---|
 | Excel | `excel_Calculadora_OMS.xlsx` | [baixar](https://github.com/isasaade-23/avaliacao-nutricional-oms/raw/main/excel_Calculadora_OMS.xlsx) |
 | LibreOffice | `libreoffice_Calculadora_OMS.ods` | [baixar](https://github.com/isasaade-23/avaliacao-nutricional-oms/raw/main/libreoffice_Calculadora_OMS.ods) |
-| Google Sheets | `gsheet_Calculadora_OMS` | [fazer uma cópia](https://docs.google.com/spreadsheets/d/1ZrYO0hEXhPV054k1nwWsasHnFxFsZ1CQfY2td47YB90/copy), ou pelo [site oficial](https://isasaade-23.github.io/avaliacao-nutricional-oms/) |
+| Google Sheets | `gsheet_Calculadora_OMS` | [criar minha cópia](https://docs.google.com/spreadsheets/d/1ZrYO0hEXhPV054k1nwWsasHnFxFsZ1CQfY2td47YB90/copy) · [ver sem entrar](https://docs.google.com/spreadsheets/d/1ZrYO0hEXhPV054k1nwWsasHnFxFsZ1CQfY2td47YB90/preview) |
 
-No Google Sheets, o link abre a janela "Fazer uma cópia". A cópia fica no seu Drive, e é nela que você digita os dados.
+No Google Sheets, você pode ver o modelo sem entrar em uma conta. Para preencher e salvar, clique em "criar minha cópia" e entre em uma conta Google, se solicitado. Confirme em "Fazer uma cópia": ela fica no seu Drive, e é nela que você digita os dados. Não é preciso solicitar permissão para editar o modelo original. Prefere usar sem conta Google? Baixe a versão Excel ou LibreOffice pelos links acima.
 
 Também dá para baixar o projeto inteiro pelo botão verde "baixar arquivo ZIP" no topo desta página. Nesse caso o arquivo vem compactado e é preciso extraí-lo antes de usar. No Windows, clique com o botão direito sobre ele e escolha "Extrair tudo". No Mac, basta dar dois cliques.
 
@@ -104,7 +104,7 @@ No Windows, clique com o botão direito sobre o arquivo baixado e escolha "Extra
 <details>
 <summary>Não tenho o Microsoft Excel instalado</summary>
 
-Use a versão para LibreOffice (`libreoffice_Calculadora_OMS.ods`), que é gratuito, ou a versão para Google Sheets, pelo [fazer uma cópia](https://docs.google.com/spreadsheets/d/1ZrYO0hEXhPV054k1nwWsasHnFxFsZ1CQfY2td47YB90/copy), ou pelo [site oficial](https://isasaade-23.github.io/avaliacao-nutricional-oms/). O conteúdo é o mesmo nas três versões.
+Use a versão para LibreOffice (`libreoffice_Calculadora_OMS.ods`), que é gratuito, ou [crie sua cópia no Google Sheets](https://docs.google.com/spreadsheets/d/1ZrYO0hEXhPV054k1nwWsasHnFxFsZ1CQfY2td47YB90/copy), entrando em uma conta Google. O conteúdo é o mesmo nas três versões.
 </details>
 
 ---

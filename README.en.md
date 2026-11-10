@@ -54,9 +54,9 @@ The calculator is a **single file**, in three versions with the same content. Pi
 |---|---|---|
 | Excel | `excel_Calculadora_OMS.xlsx` | [download](https://github.com/isasaade-23/avaliacao-nutricional-oms/raw/main/excel_Calculadora_OMS.xlsx) |
 | LibreOffice | `libreoffice_Calculadora_OMS.ods` | [download](https://github.com/isasaade-23/avaliacao-nutricional-oms/raw/main/libreoffice_Calculadora_OMS.ods) |
-| Google Sheets | `gsheet_Calculadora_OMS` | [make a copy](https://docs.google.com/spreadsheets/d/1ZrYO0hEXhPV054k1nwWsasHnFxFsZ1CQfY2td47YB90/copy) |
+| Google Sheets | `gsheet_Calculadora_OMS` | [create my copy](https://docs.google.com/spreadsheets/d/1ZrYO0hEXhPV054k1nwWsasHnFxFsZ1CQfY2td47YB90/copy) · [view without signing in](https://docs.google.com/spreadsheets/d/1ZrYO0hEXhPV054k1nwWsasHnFxFsZ1CQfY2td47YB90/preview) |
 
-In Google Sheets the link opens the "Make a copy" window. The copy lands in your own Drive, and that is where you type the data.
+You can view the Google Sheets template without signing in. To enter and save data, choose "create my copy" and sign in to a Google Account if prompted. Confirm with "Make a copy": the copy is saved to your own Drive, and that is where you enter data. You do not need to request permission to edit the original template. To use the calculator without a Google Account, download the Excel or LibreOffice version above.
 
 1. **Enter measurements** in the **Banco** tab — one row per measurement. To follow a child, always reuse the **same ID** and add a new row at each visit.
 2. **Read the results** in the **Calculo** tab, colour-coded. Use **Ficha** for a child's history and **Painel** for the group view. The **Instrucoes** tab has the step-by-step inside the workbook.
@@ -98,10 +98,10 @@ Details that faithfully reproduce WHO Anthro / AnthroPlus:
 - **WHO Child Growth Standards (2006)** — 0–5 years — official [`anthro`](https://github.com/worldhealthorganization/anthro) package.
 - **WHO Growth Reference (2007)** — 5–19 years — official [`anthroplus`](https://github.com/worldhealthorganization/anthroplus) package.
 
-Original WHO source files are versioned under `tabelas_oms/raw/` (provenance).
+The original WHO source files are kept separately to preserve their provenance.
 
 ### Validation
-- The reference logic (`zscore_ref.py`) is **identical** to an implementation validated against the official WHO **R** package across thousands of cases.
+- The reference logic was validated against the official WHO **R** package across thousands of cases.
 - **16 test cases** were recomputed in **real Excel** and match the reference, including extremes (|z|>3) and age boundaries (0, 24, 60, 61, 120 and 228 months).
 
 ---
@@ -113,18 +113,10 @@ Original WHO source files are versioned under `tabelas_oms/raw/` (provenance).
 | `excel_Calculadora_OMS.xlsx` | **Deliverable** — the calculator for Excel (WHO tables + formulas + data entry) |
 | `libreoffice_Calculadora_OMS.ods` | **Deliverable** — the same calculator for LibreOffice |
 | `Guia rápido — Avaliação Nutricional.docx` | Plain-language user guide (Portuguese) |
-| `tabelas_oms/*.csv` | Clean LMS tables used to build the workbook |
-| `tabelas_oms/raw/*.txt` | Original WHO source files (provenance) |
-| `montar_tabelas.py` | Builds the LMS tables from the WHO files |
-| `zscore_ref.py` | Reference implementation (single source of truth) |
-| `build_planilha.py` | Generates the `.xlsx` file |
-| `validate_ref.py` · `verify_*.py` | Validation (reference vs R; Excel vs reference) |
+| `Guia rápido — Avaliação Nutricional.pdf` | Printable user guide (Portuguese) |
+| `docs/index.html` | Official download page |
 
-### Rebuild from scratch
-```bash
-python montar_tabelas.py     # build the LMS tables
-python build_planilha.py     # generate the .xlsx file
-```
+Build and validation scripts are not included in this repository. To request information for auditing the calculations, use the contact email below.
 
 ---
 

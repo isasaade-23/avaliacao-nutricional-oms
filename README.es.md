@@ -54,9 +54,9 @@ La calculadora es un **archivo único**, en tres versiones con el mismo contenid
 |---|---|---|
 | Excel | `excel_Calculadora_OMS.xlsx` | [descargar](https://github.com/isasaade-23/avaliacao-nutricional-oms/raw/main/excel_Calculadora_OMS.xlsx) |
 | LibreOffice | `libreoffice_Calculadora_OMS.ods` | [descargar](https://github.com/isasaade-23/avaliacao-nutricional-oms/raw/main/libreoffice_Calculadora_OMS.ods) |
-| Google Sheets | `gsheet_Calculadora_OMS` | [hacer una copia](https://docs.google.com/spreadsheets/d/1ZrYO0hEXhPV054k1nwWsasHnFxFsZ1CQfY2td47YB90/copy) |
+| Google Sheets | `gsheet_Calculadora_OMS` | [crear mi copia](https://docs.google.com/spreadsheets/d/1ZrYO0hEXhPV054k1nwWsasHnFxFsZ1CQfY2td47YB90/copy) · [ver sin iniciar sesión](https://docs.google.com/spreadsheets/d/1ZrYO0hEXhPV054k1nwWsasHnFxFsZ1CQfY2td47YB90/preview) |
 
-En Google Sheets el enlace abre la ventana "Hacer una copia". La copia queda en tu propio Drive, y ahí escribes los datos.
+Puedes ver el modelo de Google Sheets sin iniciar sesión. Para escribir y guardar datos, elige "crear mi copia" e inicia sesión en una cuenta de Google, si se solicita. Confirma con "Hacer una copia": se guarda en tu propio Drive, y ahí escribes los datos. No necesitas solicitar permiso para editar el modelo original. Para usar la calculadora sin una cuenta de Google, descarga la versión Excel o LibreOffice con los enlaces de arriba.
 
 1. **Escribe las mediciones** en la pestaña **Banco** — una fila por medición. Para seguir a un niño, reutiliza siempre el **mismo ID** y agrega una fila en cada visita.
 2. **Lee los resultados** en la pestaña **Calculo**, con colores. Usa **Ficha** para el historial de un niño y **Painel** para la vista del grupo. La pestaña **Instrucoes** trae el paso a paso dentro de la propia planilla.
@@ -98,10 +98,10 @@ Detalles que reproducen fielmente WHO Anthro / AnthroPlus:
 - **WHO Child Growth Standards (2006)** — 0 a 5 años — paquete oficial [`anthro`](https://github.com/worldhealthorganization/anthro).
 - **WHO Growth Reference (2007)** — 5 a 19 años — paquete oficial [`anthroplus`](https://github.com/worldhealthorganization/anthroplus).
 
-Los archivos fuente originales de la OMS están versionados en `tabelas_oms/raw/` (procedencia).
+Los archivos fuente originales de la OMS se conservan por separado para preservar su procedencia.
 
 ### Validación
-- La lógica de referencia (`zscore_ref.py`) es **idéntica** a una implementación validada contra el paquete **R** oficial de la OMS en miles de casos.
+- La lógica de referencia se validó contra el paquete **R** oficial de la OMS en miles de casos.
 - **16 casos de prueba** se recalcularon en **Excel real** y coinciden con la referencia, incluidos los extremos (|z|>3) y los límites de edad (0, 24, 60, 61, 120 y 228 meses).
 
 ---
@@ -113,18 +113,10 @@ Los archivos fuente originales de la OMS están versionados en `tabelas_oms/raw/
 | `excel_Calculadora_OMS.xlsx` | **Entregable** — la calculadora para Excel (tablas de la OMS + fórmulas + entrada de datos) |
 | `libreoffice_Calculadora_OMS.ods` | **Entregable** — la misma calculadora para LibreOffice |
 | `Guia rápido — Avaliação Nutricional.docx` | Guía de uso en lenguaje sencillo (en portugués) |
-| `tabelas_oms/*.csv` | Tablas LMS limpias usadas en la construcción |
-| `tabelas_oms/raw/*.txt` | Archivos fuente originales de la OMS (procedencia) |
-| `montar_tabelas.py` | Arma las tablas LMS a partir de los archivos de la OMS |
-| `zscore_ref.py` | Implementación de referencia (fuente única de la lógica) |
-| `build_planilha.py` | Genera el archivo `.xlsx` |
-| `validate_ref.py` · `verify_*.py` | Validación (referencia vs R; Excel vs referencia) |
+| `Guia rápido — Avaliação Nutricional.pdf` | Guía imprimible (en portugués) |
+| `docs/index.html` | Página oficial de descargas |
 
-### Reconstruir desde cero
-```bash
-python montar_tabelas.py     # arma las tablas LMS
-python build_planilha.py     # genera el .xlsx
-```
+Los scripts de construcción y validación no se incluyen en este repositorio. Para solicitar información que permita auditar los cálculos, utiliza el correo de contacto de abajo.
 
 ---
 
