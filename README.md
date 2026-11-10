@@ -71,7 +71,7 @@ Também dá para baixar o projeto inteiro pelo botão verde "baixar arquivo ZIP"
 
 Abra a planilha e vá para a aba **Banco**. Digite as medições, uma linha para cada medição, com ID, sexo, data de nascimento, data da medida, peso e altura. Use sempre o mesmo ID ou número de prontuário para acompanhar a mesma criança ao longo do tempo.
 
-Os resultados aparecem na aba **Calculo**, já com cores. A aba **Ficha** mostra o histórico de uma criança, e a aba **Painel** mostra o resumo da turma. A aba **Instrucoes** traz o passo a passo dentro da própria planilha.
+Os resultados aparecem na aba **Cálculo**, já com cores. A aba **Ficha** mostra o histórico de uma criança, e a aba **Painel** mostra o resumo da turma. A aba **Instruções** traz o passo a passo dentro da própria planilha.
 
 Como os dados e os cálculos ficam no mesmo arquivo, não há nada para conectar. Guarde a planilha onde preferir e faça cópias de segurança dela como faria com qualquer documento. No Excel, se aparecer o aviso de modo protegido, clique em "Habilitar edição".
 

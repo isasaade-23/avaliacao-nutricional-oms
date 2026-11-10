@@ -59,7 +59,7 @@ La calculadora es un **archivo único**, en tres versiones con el mismo contenid
 Puedes ver el modelo de Google Sheets sin iniciar sesión. Para escribir y guardar datos, elige "crear mi copia" e inicia sesión en una cuenta de Google, si se solicita. Confirma con "Hacer una copia": se guarda en tu propio Drive, y ahí escribes los datos. No necesitas solicitar permiso para editar el modelo original. Para usar la calculadora sin una cuenta de Google, descarga la versión Excel o LibreOffice con los enlaces de arriba.
 
 1. **Escribe las mediciones** en la pestaña **Banco** — una fila por medición. Para seguir a un niño, reutiliza siempre el **mismo ID** y agrega una fila en cada visita.
-2. **Lee los resultados** en la pestaña **Calculo**, con colores. Usa **Ficha** para el historial de un niño y **Painel** para la vista del grupo. La pestaña **Instrucoes** trae el paso a paso dentro de la propia planilla.
+2. **Lee los resultados** en la pestaña **Cálculo**, con colores. Usa **Ficha** para el historial de un niño y **Painel** para la vista del grupo. La pestaña **Instruções** trae el paso a paso dentro de la propia planilla.
 
 Los datos y los cálculos están en el mismo archivo, así que no hay nada que enlazar. La guía de uso incluida (`.pdf`/`.docx`, en portugués) lo explica en lenguaje sencillo.
 
