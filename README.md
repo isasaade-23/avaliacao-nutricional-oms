@@ -4,14 +4,16 @@
 
 **Ferramenta para avaliação e acompanhamento nutricional de crianças e adolescentes de 0 a 19 anos, segundo os padrões da OMS e os critérios do SISVAN.**
 
-Funciona no Excel, sem macros, totalmente offline e é gratuita.
+Um arquivo só, com os dados e os cálculos juntos. Funciona no Excel, no LibreOffice e no Google Sheets, sem macros. É gratuita.
+
+🌐 **Endereço oficial: [isasaade-23.github.io/avaliacao-nutricional-oms](https://isasaade-23.github.io/avaliacao-nutricional-oms/)**
 
 🇧🇷 **Português** · [🇺🇸 English](README.en.md) · [🇪🇸 Español](README.es.md)
 
 [![Licença CC BY-NC-SA 4.0](https://img.shields.io/badge/licen%C3%A7a-CC%20BY--NC--SA%204.0-green)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 ![Feito com Python](https://img.shields.io/badge/feito%20com-Python-blue)
 ![Padrão OMS](https://img.shields.io/badge/padr%C3%A3o-WHO%20Anthro%20%2F%20AnthroPlus-orange)
-![Sem macros](https://img.shields.io/badge/Excel-sem%20macros-lightgrey)
+![Sem macros](https://img.shields.io/badge/planilha-sem%20macros-lightgrey)
 [![Sponsor](https://img.shields.io/badge/apoiar-GitHub%20Sponsors-EA4AAA?logo=github-sponsors)](https://github.com/sponsors/isasaade-23)
 [![Ko-fi](https://img.shields.io/badge/apoiar-Ko--fi-FF5E5B?logo=ko-fi&logoColor=white)](https://ko-fi.com/ailuciola)
 
@@ -23,7 +25,7 @@ Funciona no Excel, sem macros, totalmente offline e é gratuita.
 
 ## Comece aqui
 
-Se você só quer usar a ferramenta, não precisa entender GitHub nem programação. Clique no botão verde de baixar ZIP acima, extraia o arquivo e você vai encontrar três arquivos dentro da pasta. Dois são Excel, um é a calculadora e o outro é onde você registra as medições das crianças. O terceiro é o [Guia rápido em PDF](Guia%20r%C3%A1pido%20%E2%80%94%20Avalia%C3%A7%C3%A3o%20Nutricional.pdf), com o passo a passo em linguagem simples, pronto para imprimir. As seções [Como baixar](#como-baixar) e [Como usar](#como-usar) explicam cada passo em detalhe.
+Se você só quer usar a ferramenta, não precisa entender GitHub nem programação. Escolha a sua versão, baixe o arquivo e digite as medições na aba Banco. Os resultados aparecem sozinhos nas outras abas. Há também o [Guia rápido em PDF](Guia%20r%C3%A1pido%20%E2%80%94%20Avalia%C3%A7%C3%A3o%20Nutricional.pdf), com o passo a passo em linguagem simples, pronto para imprimir. As seções [Como baixar](#como-baixar) e [Como usar](#como-usar) explicam cada passo em detalhe.
 
 ---
 
@@ -45,29 +47,33 @@ Se você só quer usar a ferramenta, não precisa entender GitHub nem programaç
 
 Acompanhar o estado nutricional de crianças ao longo do tempo costuma ser trabalhoso, pois exige consultar as tabelas da OMS, calcular escores-z à mão e classificar o resultado segundo o SISVAN. Por isso, muitas vezes esse acompanhamento não é feito, ou é feito com erro.
 
-Nesta ferramenta, você digita peso, altura e datas em um arquivo de dados, e a calculadora devolve os escores-z e a classificação do estado nutricional na hora, já com cores. Também dá para acompanhar a mesma criança ao longo dos meses, ver a curva de crescimento e ver o resumo da turma ou da unidade.
+Nesta ferramenta, você digita peso, altura e datas na aba Banco, e a mesma planilha devolve os escores-z e a classificação do estado nutricional na hora, já com cores. Também dá para acompanhar a mesma criança ao longo dos meses, ver a curva de crescimento e ver o resumo da turma ou da unidade.
 
 ---
 
 ## Como baixar
 
-Esta seção explica como baixar os arquivos, mesmo para quem nunca usou o GitHub antes.
+A calculadora é um arquivo único, em três versões com o mesmo conteúdo. Escolha a que combina com o programa que você usa.
 
-Clique no botão verde "baixar arquivo ZIP" no topo desta página. O navegador salva um arquivo chamado `avaliacao-nutricional-oms-main.zip` na pasta Downloads do computador.
+| Versão | Arquivo | Onde baixar |
+|---|---|---|
+| Excel | `excel_Calculadora_OMS.xlsx` | [baixar](https://github.com/isasaade-23/avaliacao-nutricional-oms/raw/main/excel_Calculadora_OMS.xlsx) |
+| LibreOffice | `libreoffice_Calculadora_OMS.ods` | [baixar](https://github.com/isasaade-23/avaliacao-nutricional-oms/raw/main/libreoffice_Calculadora_OMS.ods) |
+| Google Sheets | `gsheet_Calculadora_OMS` | [fazer uma cópia](https://docs.google.com/spreadsheets/d/1ZrYO0hEXhPV054k1nwWsasHnFxFsZ1CQfY2td47YB90/copy), ou pelo [site oficial](https://isasaade-23.github.io/avaliacao-nutricional-oms/) |
 
-Esse arquivo vem compactado, então é preciso extraí-lo antes de usar. No Windows, clique com o botão direito sobre o arquivo baixado e escolha "Extrair tudo". No Mac, basta dar dois cliques sobre o arquivo, e o sistema extrai sozinho.
+No Google Sheets, o link abre a janela "Fazer uma cópia". A cópia fica no seu Drive, e é nela que você digita os dados.
 
-Dentro da pasta extraída, os arquivos que interessam para o uso diário são `BD_AvaliacaoNutricional.xlsx`, `Calculadora_OMS.xlsx` e o Guia rápido em PDF. Guarde os dois arquivos Excel juntos, como explica a seção seguinte, e deixe o guia à mão para consultar.
+Também dá para baixar o projeto inteiro pelo botão verde "baixar arquivo ZIP" no topo desta página. Nesse caso o arquivo vem compactado e é preciso extraí-lo antes de usar. No Windows, clique com o botão direito sobre ele e escolha "Extrair tudo". No Mac, basta dar dois cliques.
 
 ---
 
 ## Como usar
 
-Guarde os dois arquivos juntos em uma pasta local do computador, como `C:\AvaliacaoNutricional`. Evite o OneDrive e o Google Drive, porque o Excel só consegue ligar as duas planilhas quando elas estão em uma pasta local.
+Abra a planilha e vá para a aba **Banco**. Digite as medições, uma linha para cada medição, com ID, sexo, data de nascimento, data da medida, peso e altura. Use sempre o mesmo ID ou número de prontuário para acompanhar a mesma criança ao longo do tempo.
 
-Abra o arquivo de dados (`BD_AvaliacaoNutricional.xlsx`) e digite as medições na aba Dados, uma linha para cada medição. Use sempre o mesmo ID ou número de prontuário para acompanhar a mesma criança ao longo do tempo. Depois salve e feche o arquivo.
+Os resultados aparecem na aba **Calculo**, já com cores. A aba **Ficha** mostra o histórico de uma criança, e a aba **Painel** mostra o resumo da turma. A aba **Instrucoes** traz o passo a passo dentro da própria planilha.
 
-Abra a calculadora (`Calculadora_OMS.xlsx`). Na primeira vez, clique em "Habilitar Conteúdo" na barra amarela do topo. Os resultados aparecem na aba CÁLCULO, já com cores. A aba FICHA mostra o histórico de uma criança, e a aba PAINEL mostra o resumo da turma.
+Como os dados e os cálculos ficam no mesmo arquivo, não há nada para conectar. Guarde a planilha onde preferir e faça cópias de segurança dela como faria com qualquer documento. No Excel, se aparecer o aviso de modo protegido, clique em "Habilitar edição".
 
 ---
 
@@ -92,25 +98,13 @@ Fora dessas faixas, a planilha mostra um traço no lugar do resultado, porque o 
 <details>
 <summary>Não sei extrair um arquivo ZIP, e agora</summary>
 
-No Windows, clique com o botão direito sobre o arquivo baixado e escolha "Extrair tudo". No Mac, basta dar dois cliques sobre o arquivo, e o sistema extrai sozinho. Depois é só abrir a pasta extraída e localizar os dois arquivos `.xlsx`.
-</details>
-
-<details>
-<summary>A calculadora não encontra o arquivo de dados</summary>
-
-Isso costuma acontecer quando os dois arquivos não estão na mesma pasta, ou quando essa pasta está sincronizada com o OneDrive ou o Google Drive. Mova os dois arquivos juntos para uma pasta local, feche os dois arquivos e abra a calculadora de novo. Em seguida, na aba Dados do Excel, clique em "Atualizar Tudo".
+No Windows, clique com o botão direito sobre o arquivo baixado e escolha "Extrair tudo". No Mac, basta dar dois cliques sobre o arquivo, e o sistema extrai sozinho. Depois é só abrir a pasta extraída e localizar o arquivo da sua versão.
 </details>
 
 <details>
 <summary>Não tenho o Microsoft Excel instalado</summary>
 
-A planilha usa recursos do Excel, como o Power Query, que podem não funcionar em outros programas de planilha. Recomendamos o Microsoft Excel, mesmo em uma versão antiga, para garantir que tudo funcione como esperado.
-</details>
-
-<details>
-<summary>O Excel mostra uma barra amarela de aviso ao abrir a calculadora</summary>
-
-Essa barra aparece porque o arquivo se conecta a outro arquivo do computador. Clique em "Habilitar Conteúdo" para permitir a conexão. O arquivo não usa macros nem se conecta à internet.
+Use a versão para LibreOffice (`libreoffice_Calculadora_OMS.ods`), que é gratuito, ou a versão para Google Sheets, pelo [fazer uma cópia](https://docs.google.com/spreadsheets/d/1ZrYO0hEXhPV054k1nwWsasHnFxFsZ1CQfY2td47YB90/copy), ou pelo [site oficial](https://isasaade-23.github.io/avaliacao-nutricional-oms/). O conteúdo é o mesmo nas três versões.
 </details>
 
 ---
@@ -125,7 +119,7 @@ Se este projeto ajudar no seu trabalho, uma citação é bem-vinda. Use o botão
 
 ## Privacidade e licença
 
-São dados de saúde de menores. Use o ID ou o número de prontuário como chave, trate o nome como um campo opcional e guarde o arquivo em um local restrito. A ferramenta funciona inteiramente offline e não envia nenhum dado para a internet.
+São dados de saúde de menores. Use o ID ou o número de prontuário como chave, trate o nome como um campo opcional e guarde o arquivo em um local restrito. As versões Excel e LibreOffice funcionam inteiramente offline e não enviam nenhum dado para a internet. Na versão Google Sheets, os dados ficam na nuvem do Google. Faça uma cópia para o seu Drive, não digite nada no modelo original e restrinja o compartilhamento da sua cópia.
 
 Este projeto é distribuído sob a licença [CC BY-NC-SA 4.0](LICENSE). Você pode usar, copiar, modificar e distribuir o material livremente, inclusive em creches, escolas e serviços de saúde, desde que mantenha o aviso de autoria e não venda o material. Se você adaptar o projeto, redistribua a adaptação sob a mesma licença.
 
@@ -142,7 +136,7 @@ $$z = \frac{(X/M)^L - 1}{L \cdot S} \quad \text{(ou } z = \frac{\ln(X/M)}{S} \te
 
 Nessa fórmula, L, M e S são parâmetros que variam por sexo e idade, ou por sexo e comprimento ou estatura, e vêm das tabelas oficiais da OMS.
 
-A planilha reproduz fielmente o WHO Anthro e o WHO AnthroPlus nos pontos a seguir. A idade é calculada em dias entre 0 e 5 anos, seguindo o WHO Anthro de 2006, e em meses entre 5 e 19 anos, seguindo o WHO Growth Reference de 2007. Os índices baseados em peso, que são IMC por idade, Peso por idade e Peso por estatura, recebem o ajuste da OMS quando o escore-z ultrapassa 3 em módulo, para evitar extrapolar além dos dados observados. Quando a forma de medir diverge do padrão para a idade, a planilha aplica o ajuste de 0,7 cm da OMS, usado quando uma criança com menos de 2 anos é medida em pé, ou quando uma criança com 2 anos ou mais é medida deitada. Por fim, a planilha usa apenas funções clássicas do Excel, como ÍNDICE, CORRESP e SE, e por isso funciona também em versões antigas, sem macros.
+A planilha reproduz fielmente o WHO Anthro e o WHO AnthroPlus nos pontos a seguir. A idade é calculada em dias entre 0 e 5 anos, seguindo o WHO Anthro de 2006, e em meses entre 5 e 19 anos, seguindo o WHO Growth Reference de 2007. Os índices baseados em peso, que são IMC por idade, Peso por idade e Peso por estatura, recebem o ajuste da OMS quando o escore-z ultrapassa 3 em módulo, para evitar extrapolar além dos dados observados. Quando a forma de medir diverge do padrão para a idade, a planilha aplica o ajuste de 0,7 cm da OMS, usado quando uma criança com menos de 2 anos é medida em pé, ou quando uma criança com 2 anos ou mais é medida deitada. Por fim, a planilha usa apenas funções clássicas, como ÍNDICE, CORRESP e SE, e por isso funciona também em versões antigas do Excel, no LibreOffice e no Google Sheets, sem macros.
 
 Os dados de 0 a 5 anos vêm do WHO Child Growth Standards de 2006, publicado no pacote oficial [`anthro`](https://github.com/worldhealthorganization/anthro). Os dados de 5 a 19 anos vêm do WHO Growth Reference de 2007, publicado no pacote oficial [`anthroplus`](https://github.com/worldhealthorganization/anthroplus). Os arquivos originais da OMS foram mantidos à parte, para preservar a procedência dos dados.
 

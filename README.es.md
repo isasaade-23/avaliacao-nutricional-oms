@@ -2,7 +2,9 @@
 
 # 🌱 Evaluación Nutricional Infantil — OMS / SISVAN
 
-**Dos planillas de Excel (sin macros) que calculan los puntajes-z de la OMS y el diagnóstico nutricional de niños y adolescentes (0 a 19 años) — para apoyar el seguimiento del crecimiento en guarderías, escuelas y servicios de salud.**
+**Una sola planilla (sin macros) que calcula los puntajes-z de la OMS y el diagnóstico nutricional de niños y adolescentes (0 a 19 años) — para apoyar el seguimiento del crecimiento en guarderías, escuelas y servicios de salud.**
+
+🌐 **Sitio oficial: [isasaade-23.github.io/avaliacao-nutricional-oms](https://isasaade-23.github.io/avaliacao-nutricional-oms/)** (versiones Excel, LibreOffice y Google Sheets)
 
 [🇧🇷 Português](README.md) · [🇺🇸 English](README.en.md) · 🇪🇸 **Español**
 
@@ -23,13 +25,13 @@ Seguir el **estado nutricional de un niño a lo largo del tiempo** suele ser ted
 
 Este proyecto ofrece una herramienta **simple y confiable** para quien cuida niños:
 
-- Se **escriben peso, talla y fechas** en un "cuadernillo" (la base de datos);
-- La **calculadora devuelve automáticamente** los puntajes-z y el diagnóstico nutricional, con colores;
+- Se **escriben peso, talla y fechas** en la pestaña **Banco**;
+- La **misma planilla devuelve automáticamente** los puntajes-z y el diagnóstico nutricional, con colores;
 - Se puede **seguir al mismo niño mes a mes** (crecimiento longitudinal) y ver la curva de evolución.
 
 El objetivo es **mejorar la vigilancia nutricional** — detectar temprano la delgadez, la baja talla, el sobrepeso y la obesidad — en servicios que atienden niños pero rara vez cuentan con un sistema para ello.
 
-> **No hace falta instalar nada más que Excel. Sin macros. Ningún dato sale de tu computadora.**
+> **Sin macros. En las versiones Excel y LibreOffice ningún dato sale de tu computadora.**
 
 ---
 
@@ -39,22 +41,27 @@ El objetivo es **mejorar la vigilancia nutricional** — detectar temprano la de
 - 🎨 **Diagnóstico automático** con las categorías del SISVAN / Ministerio de Salud, con colores (verde = adecuado, amarillo = atención, rojo = déficit/exceso).
 - 📈 **Seguimiento longitudinal**: elige un niño y observa el historial y la curva de puntajes-z.
 - 👥 **Panel del grupo/unidad**: distribución del estado nutricional del grupo.
-- 🔗 **Enlace automático** base de datos → calculadora mediante **Power Query** (función nativa, no es una macro).
+- 📄 **Un solo archivo**: entrada de datos y cálculo en la misma planilla, sin nada que enlazar.
 - ✅ **Validado**: las fórmulas de Excel se contrastaron con una implementación de referencia en Python y con el paquete R oficial de la OMS.
 
 ---
 
 ## 🚀 Cómo usarlo
 
-1. **Descarga ambos archivos** y mantenlos **en la misma carpeta local** (evita OneDrive/Drive — mira la nota abajo):
-   - `BD_AvaliacaoNutricional.xlsx` — la **base de datos** (donde escribes);
-   - `Calculadora_OMS.xlsx` — la **calculadora** (motor de cálculo).
+La calculadora es un **archivo único**, en tres versiones con el mismo contenido. Elige la que corresponde a tu programa:
 
-2. **Escribe las mediciones** en la base de datos, pestaña **Dados** — una fila por medición. Para seguir a un niño, reutiliza siempre el **mismo ID** y agrega una fila en cada visita. Guarda y cierra.
+| Versión | Archivo | Descarga |
+|---|---|---|
+| Excel | `excel_Calculadora_OMS.xlsx` | [descargar](https://github.com/isasaade-23/avaliacao-nutricional-oms/raw/main/excel_Calculadora_OMS.xlsx) |
+| LibreOffice | `libreoffice_Calculadora_OMS.ods` | [descargar](https://github.com/isasaade-23/avaliacao-nutricional-oms/raw/main/libreoffice_Calculadora_OMS.ods) |
+| Google Sheets | `gsheet_Calculadora_OMS` | [hacer una copia](https://docs.google.com/spreadsheets/d/1ZrYO0hEXhPV054k1nwWsasHnFxFsZ1CQfY2td47YB90/copy) |
 
-3. **Abre la calculadora.** Trae la base de datos sola. La primera vez, haz clic en **"Habilitar contenido"** en la barra amarilla. Los resultados aparecen en la pestaña **CÁLCULO**; usa **FICHA** para el historial de un niño y **PAINEL** para la vista del grupo.
+En Google Sheets el enlace abre la ventana "Hacer una copia". La copia queda en tu propio Drive, y ahí escribes los datos.
 
-> 💡 **Consejo (importante):** Excel solo enlaza los dos archivos si están en una **carpeta local** (p. ej. `C:\AvaliacaoNutricional`). En carpetas sincronizadas en la nube (OneDrive/Google Drive) el enlace puede fallar con un error de "ruta de archivo". La guía de uso incluida (`.docx`, en portugués) lo explica paso a paso.
+1. **Escribe las mediciones** en la pestaña **Banco** — una fila por medición. Para seguir a un niño, reutiliza siempre el **mismo ID** y agrega una fila en cada visita.
+2. **Lee los resultados** en la pestaña **Calculo**, con colores. Usa **Ficha** para el historial de un niño y **Painel** para la vista del grupo. La pestaña **Instrucoes** trae el paso a paso dentro de la propia planilla.
+
+Los datos y los cálculos están en el mismo archivo, así que no hay nada que enlazar. La guía de uso incluida (`.pdf`/`.docx`, en portugués) lo explica en lenguaje sencillo.
 
 ---
 
@@ -103,22 +110,20 @@ Los archivos fuente originales de la OMS están versionados en `tabelas_oms/raw/
 
 | Archivo | Descripción |
 |---|---|
-| `Calculadora_OMS.xlsx` | **Entregable** — la calculadora (tablas de la OMS + fórmulas) |
-| `BD_AvaliacaoNutricional.xlsx` | **Entregable** — la base de datos (plantilla vacía) |
+| `excel_Calculadora_OMS.xlsx` | **Entregable** — la calculadora para Excel (tablas de la OMS + fórmulas + entrada de datos) |
+| `libreoffice_Calculadora_OMS.ods` | **Entregable** — la misma calculadora para LibreOffice |
 | `Guia rápido — Avaliação Nutricional.docx` | Guía de uso en lenguaje sencillo (en portugués) |
 | `tabelas_oms/*.csv` | Tablas LMS limpias usadas en la construcción |
 | `tabelas_oms/raw/*.txt` | Archivos fuente originales de la OMS (procedencia) |
 | `montar_tabelas.py` | Arma las tablas LMS a partir de los archivos de la OMS |
 | `zscore_ref.py` | Implementación de referencia (fuente única de la lógica) |
-| `build_planilha.py` | Genera los dos archivos `.xlsx` |
-| `configurar_powerquery.ps1` | Configura el enlace automático base de datos → calculadora |
+| `build_planilha.py` | Genera el archivo `.xlsx` |
 | `validate_ref.py` · `verify_*.py` | Validación (referencia vs R; Excel vs referencia) |
 
 ### Reconstruir desde cero
 ```bash
 python montar_tabelas.py     # arma las tablas LMS
-python build_planilha.py     # genera los dos .xlsx
-powershell -ExecutionPolicy Bypass -File configurar_powerquery.ps1   # conecta Power Query
+python build_planilha.py     # genera el .xlsx
 ```
 
 ---
@@ -135,7 +140,7 @@ Si quieres apoyar el mantenimiento del proyecto, es totalmente opcional — vía
 
 ## 🔒 Privacidad
 
-Son **datos de salud de menores**. Usa el **ID/número de registro** como clave, mantén el **Nombre** como opcional y guarda la base de datos en un **lugar restringido y controlado**. La herramienta funciona **completamente sin conexión** — nada se envía a internet.
+Son **datos de salud de menores**. Usa el **ID/número de registro** como clave, mantén el **Nombre** como opcional y guarda el archivo en un **lugar restringido y controlado**. Las versiones Excel y LibreOffice funcionan **completamente sin conexión**. En la versión Google Sheets los datos quedan en la nube de Google: haz una copia en tu Drive, no escribas nada en el modelo original y restringe el acceso a tu copia.
 
 ---
 

@@ -2,7 +2,9 @@
 
 # 🌱 Child Nutritional Assessment — WHO / SISVAN
 
-**Two macro-free Excel spreadsheets that compute WHO z-scores and the nutritional diagnosis of children and adolescents (0–19 years) — to support growth monitoring in daycares, schools and health services.**
+**A single macro-free spreadsheet that computes WHO z-scores and the nutritional diagnosis of children and adolescents (0–19 years) — to support growth monitoring in daycares, schools and health services.**
+
+🌐 **Official site: [isasaade-23.github.io/avaliacao-nutricional-oms](https://isasaade-23.github.io/avaliacao-nutricional-oms/)** (Excel, LibreOffice and Google Sheets versions)
 
 [🇧🇷 Português](README.md) · 🇺🇸 **English** · [🇪🇸 Español](README.es.md)
 
@@ -23,13 +25,13 @@ Tracking a child's **nutritional status over time** is tedious: it means looking
 
 This project delivers a **simple, reliable tool** for anyone who cares for children:
 
-- You **type weight, height and dates** into a small "logbook" (the database);
-- The **calculator automatically returns** the z-scores and the nutritional diagnosis, colour-coded;
+- You **type weight, height and dates** into the **Banco** tab;
+- The **same workbook automatically returns** the z-scores and the nutritional diagnosis, colour-coded;
 - You can **follow the same child across months** (longitudinal growth) and see the trend curve.
 
 The goal is to **improve nutritional surveillance** — catching wasting, stunting, overweight and obesity early — in services that see children but rarely have a system for it.
 
-> **Nothing to install beyond Excel. No macros. No data ever leaves your computer.**
+> **No macros. In the Excel and LibreOffice versions no data ever leaves your computer.**
 
 ---
 
@@ -39,22 +41,27 @@ The goal is to **improve nutritional surveillance** — catching wasting, stunti
 - 🎨 **Automatic diagnosis** using SISVAN / Ministry of Health categories, colour-coded (green = adequate, yellow = attention, red = deficit/excess).
 - 📈 **Longitudinal follow-up**: pick a child and see the history and z-score curve.
 - 👥 **Group dashboard**: nutritional-status distribution for the class/unit.
-- 🔗 **Automatic link** database → calculator via **Power Query** (a native feature, not a macro).
+- 📄 **One single file**: data entry and calculation in the same workbook, nothing to link.
 - ✅ **Validated**: Excel formulas checked against a Python reference implementation and the official WHO R package.
 
 ---
 
 ## 🚀 Getting started
 
-1. **Download both files** and keep them **in the same local folder** (avoid OneDrive/Drive — see note below):
-   - `BD_AvaliacaoNutricional.xlsx` — the **database** (where you type);
-   - `Calculadora_OMS.xlsx` — the **calculator** (computation engine).
+The calculator is a **single file**, in three versions with the same content. Pick the one that matches your software:
 
-2. **Enter measurements** in the database, **Dados** tab — one row per measurement. To follow a child, always reuse the **same ID** and add a new row at each visit. Save and close.
+| Version | File | Download |
+|---|---|---|
+| Excel | `excel_Calculadora_OMS.xlsx` | [download](https://github.com/isasaade-23/avaliacao-nutricional-oms/raw/main/excel_Calculadora_OMS.xlsx) |
+| LibreOffice | `libreoffice_Calculadora_OMS.ods` | [download](https://github.com/isasaade-23/avaliacao-nutricional-oms/raw/main/libreoffice_Calculadora_OMS.ods) |
+| Google Sheets | `gsheet_Calculadora_OMS` | [make a copy](https://docs.google.com/spreadsheets/d/1ZrYO0hEXhPV054k1nwWsasHnFxFsZ1CQfY2td47YB90/copy) |
 
-3. **Open the calculator.** It pulls the database on its own. The first time, click **"Enable Content"** on the yellow bar. Results appear on the **CÁLCULO** tab; use the **FICHA** tab for a child's history and **PAINEL** for the group view.
+In Google Sheets the link opens the "Make a copy" window. The copy lands in your own Drive, and that is where you type the data.
 
-> 💡 **Tip (important):** Excel can only link the two files when they sit in a **local folder** (e.g. `C:\AvaliacaoNutricional`). In cloud-synced folders (OneDrive/Google Drive) the link may fail with a "file path" error. The bundled user guide (`.docx`, in Portuguese) walks through this in plain language.
+1. **Enter measurements** in the **Banco** tab — one row per measurement. To follow a child, always reuse the **same ID** and add a new row at each visit.
+2. **Read the results** in the **Calculo** tab, colour-coded. Use **Ficha** for a child's history and **Painel** for the group view. The **Instrucoes** tab has the step-by-step inside the workbook.
+
+Data and calculations live in the same file, so there is nothing to link. The bundled user guide (`.pdf`/`.docx`, in Portuguese) walks through the steps in plain language.
 
 ---
 
@@ -103,22 +110,20 @@ Original WHO source files are versioned under `tabelas_oms/raw/` (provenance).
 
 | File | Description |
 |---|---|
-| `Calculadora_OMS.xlsx` | **Deliverable** — the calculator (WHO tables + formulas) |
-| `BD_AvaliacaoNutricional.xlsx` | **Deliverable** — the database (empty template) |
+| `excel_Calculadora_OMS.xlsx` | **Deliverable** — the calculator for Excel (WHO tables + formulas + data entry) |
+| `libreoffice_Calculadora_OMS.ods` | **Deliverable** — the same calculator for LibreOffice |
 | `Guia rápido — Avaliação Nutricional.docx` | Plain-language user guide (Portuguese) |
 | `tabelas_oms/*.csv` | Clean LMS tables used to build the workbook |
 | `tabelas_oms/raw/*.txt` | Original WHO source files (provenance) |
 | `montar_tabelas.py` | Builds the LMS tables from the WHO files |
 | `zscore_ref.py` | Reference implementation (single source of truth) |
-| `build_planilha.py` | Generates the two `.xlsx` files |
-| `configurar_powerquery.ps1` | Sets up the automatic database → calculator link |
+| `build_planilha.py` | Generates the `.xlsx` file |
 | `validate_ref.py` · `verify_*.py` | Validation (reference vs R; Excel vs reference) |
 
 ### Rebuild from scratch
 ```bash
 python montar_tabelas.py     # build the LMS tables
-python build_planilha.py     # generate the two .xlsx files
-powershell -ExecutionPolicy Bypass -File configurar_powerquery.ps1   # wire up Power Query
+python build_planilha.py     # generate the .xlsx file
 ```
 
 ---
@@ -135,7 +140,7 @@ If you'd like to support the project's upkeep, it's entirely optional — via [G
 
 ## 🔒 Privacy
 
-This is **children's health data**. Use the **ID/record number** as the key, keep the **Name** optional, and store the database in a **restricted, controlled location**. The tool runs **entirely offline** — nothing is sent to the internet.
+This is **children's health data**. Use the **ID/record number** as the key, keep the **Name** optional, and store the file in a **restricted, controlled location**. The Excel and LibreOffice versions run **entirely offline**. In the Google Sheets version the data lives in Google's cloud: make a copy into your own Drive, never type into the original template, and restrict sharing of your copy.
 
 ---
 

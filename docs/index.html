@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Avaliação Nutricional Infantil, padrão OMS e SISVAN</title>
+<meta name="description" content="Calculadora gratuita de escores-z e diagnóstico nutricional de 0 a 19 anos (OMS/SISVAN) para Excel, LibreOffice e Google Sheets.">
+<style>
+  :root { --azul:#1F4E79; --azul2:#2E75B6; --verde:#C6EFCE; --verde-t:#006100; --amar:#FFEB9C; --amar-t:#9C6500; --cinza:#f4f6f8; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color:#1b1b1b; line-height:1.55; background:#fff; }
+  header { background:var(--azul); color:#fff; padding:2.5rem 1rem; text-align:center; }
+  header h1 { margin:0 0 .5rem; font-size:1.8rem; }
+  header p { margin:0 auto; max-width:42rem; opacity:.95; }
+  main { max-width:56rem; margin:0 auto; padding:1.5rem 1rem 3rem; }
+  h2 { color:var(--azul); margin-top:2.2rem; }
+  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(15rem,1fr)); gap:1rem; }
+  .card { border:1px solid #d5dbe1; border-radius:.6rem; padding:1rem; background:var(--cinza); display:flex; flex-direction:column; }
+  .card h3 { margin:.1rem 0 .4rem; color:var(--azul); }
+  .card p { margin:0 0 .8rem; font-size:.95rem; flex:1; }
+  .btn { display:block; text-align:center; background:var(--azul2); color:#fff; text-decoration:none; padding:.6rem .8rem; border-radius:.4rem; font-weight:600; margin-top:.3rem; }
+  .btn:hover { background:var(--azul); }
+  .btn.sec { background:#fff; color:var(--azul2); border:1px solid var(--azul2); }
+  .btn.off { background:#d5dbe1; color:#555; pointer-events:none; }
+  .aviso { background:var(--amar); color:var(--amar-t); border-radius:.5rem; padding:.8rem 1rem; }
+  .ok { background:var(--verde); color:var(--verde-t); border-radius:.5rem; padding:.8rem 1rem; }
+  footer { border-top:1px solid #d5dbe1; padding:1.2rem 1rem; text-align:center; font-size:.9rem; color:#555; }
+  a { color:var(--azul2); }
+  code { background:var(--cinza); padding:.1rem .3rem; border-radius:.2rem; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Avaliação Nutricional Infantil, padrão OMS e SISVAN</h1>
+  <p>Escores-z e diagnóstico nutricional de crianças e adolescentes de 0 a 19 anos, para escolas, creches e serviços de saúde. Gratuita, sem macros.</p>
+</header>
+<main>
+  <h2>Escolha a sua versão</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Excel</h3>
+      <p>Um arquivo só, com os dados e os cálculos juntos. Funciona offline, sem macros.</p>
+      <a class="btn" href="https://github.com/isasaade-23/avaliacao-nutricional-oms/raw/main/excel_Calculadora_OMS.xlsx">Baixar (.xlsx)</a>
+    </div>
+    <div class="card">
+      <h3>LibreOffice</h3>
+      <p>Um arquivo só, com os dados e os cálculos juntos. Funciona offline e sem custo de licença.</p>
+      <a class="btn" href="https://github.com/isasaade-23/avaliacao-nutricional-oms/raw/main/libreoffice_Calculadora_OMS.ods">Baixar (.ods)</a>
+    </div>
+    <div class="card">
+      <h3>Google Sheets</h3>
+      <p>Um arquivo só, online. Clique para criar a sua própria cópia no seu Drive e digite os dados nela.</p>
+      <a class="btn" href="https://docs.google.com/spreadsheets/d/1ZrYO0hEXhPV054k1nwWsasHnFxFsZ1CQfY2td47YB90/copy">Fazer uma cópia</a>
+    </div>
+  </div>
+
+  <h2>Guia rápido</h2>
+  <p><a href="https://github.com/isasaade-23/avaliacao-nutricional-oms/raw/main/Guia%20r%C3%A1pido%20%E2%80%94%20Avalia%C3%A7%C3%A3o%20Nutricional.pdf">Guia rápido em PDF</a> com o passo a passo, os critérios de classificação e as dúvidas mais comuns.</p>
+
+  <h2>Privacidade</h2>
+  <p class="ok">As versões Excel e LibreOffice funcionam totalmente offline e não enviam nenhum dado para a internet.</p>
+  <p class="aviso">São dados de saúde de menores. Na versão Google Sheets os dados ficam na nuvem do Google. Faça uma cópia, não digite nada no modelo original, use o ID ou o prontuário como chave e restrinja o compartilhamento da sua cópia.</p>
+
+  <h2>Como citar</h2>
+  <p>Venancio da Silva, I. (2026). <em>Avaliação Nutricional Infantil, OMS e SISVAN</em> [software]. <a href="https://github.com/isasaade-23/avaliacao-nutricional-oms">github.com/isasaade-23/avaliacao-nutricional-oms</a></p>
+
+  <h2>Licença</h2>
+  <p>Creative Commons <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt-br">CC BY-NC-SA 4.0</a>. Pode usar, copiar, modificar e distribuir, sem fins comerciais, mantendo a mesma licença.</p>
+
+  <h2>Outros idiomas e código</h2>
+  <p>
+    <a href="https://github.com/isasaade-23/avaliacao-nutricional-oms#readme">Documentação completa (PT)</a> ·
+    <a href="https://github.com/isasaade-23/avaliacao-nutricional-oms/blob/main/README.en.md">English</a> ·
+    <a href="https://github.com/isasaade-23/avaliacao-nutricional-oms/blob/main/README.es.md">Español</a> ·
+    <a href="https://github.com/isasaade-23/avaliacao-nutricional-oms">Repositório no GitHub</a>
+  </p>
+</main>
+<footer>
+  Isabela Venancio da Silva · <a href="https://github.com/sponsors/isasaade-23">GitHub Sponsors</a> · <a href="https://ko-fi.com/ailuciola">Ko-fi</a> · Pix <code>isasaade23@gmail.com</code>
+</footer>
+</body>
+</html>
