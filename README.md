@@ -113,7 +113,7 @@ Use a versão para LibreOffice (`libreoffice_Calculadora_OMS.ods`), que é gratu
 
 Se este projeto ajudar no seu trabalho, uma citação é bem-vinda. Use o botão "Cite this repository" no GitHub, ou o arquivo [`CITATION.cff`](CITATION.cff).
 
-> Venancio da Silva, I. (2026). *Avaliação Nutricional Infantil, OMS e SISVAN* [software]. https://github.com/isasaade-23/avaliacao-nutricional-oms
+> Venancio, I.S. (2026). *Avaliação Nutricional Infantil, OMS e SISVAN* [software]. https://github.com/isasaade-23/avaliacao-nutricional-oms
 
 ---
 
