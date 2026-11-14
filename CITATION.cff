@@ -7,11 +7,13 @@ authors:
     family-names: Venancio
 repository-code: "https://github.com/isasaade-23/avaliacao-nutricional-oms"
 abstract: >-
-  Duas planilhas Excel (sem macros) que calculam os escores-z da OMS
-  (método LMS, WHO Anthro 2006 e AnthroPlus 2007) e o diagnóstico
-  nutricional SISVAN de crianças e adolescentes de 0 a 19 anos, com
-  acompanhamento longitudinal, para apoiar a vigilância nutricional em
-  creches, escolas e serviços de saúde.
+  Planilha única, sem macros, em três versões (Excel, LibreOffice e
+  Google Sheets), que calcula os escores-z da OMS (método LMS, WHO
+  Anthro 2006 e AnthroPlus 2007) e o diagnóstico nutricional SISVAN de
+  crianças e adolescentes de 0 a 19 anos, com acompanhamento
+  longitudinal, validação dos dados digitados e aviso de possível
+  duplicata, para apoiar a vigilância nutricional em creches, escolas e
+  serviços de saúde.
 keywords:
   - nutritional assessment
   - anthropometry

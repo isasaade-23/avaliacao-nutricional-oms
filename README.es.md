@@ -61,6 +61,14 @@ Puedes ver el modelo de Google Sheets sin iniciar sesión. Para escribir y guard
 1. **Escribe las mediciones** en la pestaña **Banco** — una fila por medición. Para seguir a un niño, reutiliza siempre el **mismo ID** y agrega una fila en cada visita.
 2. **Lee los resultados** en la pestaña **Cálculo**, con colores. Usa **Ficha** para el historial de un niño y **Painel** para la vista del grupo. La pestaña **Instruções** trae el paso a paso dentro de la propia planilla.
 
+En **Banco**, el campo de sexo se llama "Sexo biológico*" (sexo asignado al nacer), porque las curvas de la OMS son distintas para niños y niñas. La nota y sus referencias están en la fila 28 de la pestaña **Instruções**.
+
+**Banco** verifica lo que escribes: el nombre no admite números; el sexo debe ser Masculino o Feminino; las fechas deben ser válidas y no estar en el futuro; el peso va de 0,5 a 200 kg; la talla, de 30 a 220 cm; y la posición de medición es Deitado (acostado) o Em pé (de pie).
+
+Si el mismo nombre, la misma fecha de nacimiento y el mismo sexo aparecen con IDs distintos, la columna J muestra "Possível duplicata: já existe com o ID X" (posible duplicado: ya existe con el ID X), y el ID y el aviso se pintan de ámbar. Las mayúsculas y las tildes no cuentan como diferencia. Es solo un aviso. La columna K es auxiliar y está oculta.
+
+La pestaña **Cálculo** está protegida contra edición, sin contraseña. En Google Sheets la protección solo muestra un aviso al editar y no bloquea. **Banco** llega hasta la fila 1501 en Excel y LibreOffice, y hasta la fila 1001 en Google Sheets.
+
 Los datos y los cálculos están en el mismo archivo, así que no hay nada que enlazar. La guía de uso incluida (`.pdf`/`.docx`, en portugués) lo explica en lenguaje sencillo.
 
 ---

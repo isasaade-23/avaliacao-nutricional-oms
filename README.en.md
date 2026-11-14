@@ -61,6 +61,14 @@ You can view the Google Sheets template without signing in. To enter and save da
 1. **Enter measurements** in the **Banco** tab — one row per measurement. To follow a child, always reuse the **same ID** and add a new row at each visit.
 2. **Read the results** in the **Cálculo** tab, colour-coded. Use **Ficha** for a child's history and **Painel** for the group view. The **Instruções** tab has the step-by-step inside the workbook.
 
+In **Banco**, the sex field is labelled "Sexo biológico*" (sex assigned at birth), because the WHO curves are separate for boys and girls. The note and its references are in row 28 of the **Instruções** tab.
+
+**Banco** checks what you type: names cannot contain numbers; sex must be Masculino (male) or Feminino (female); dates must be valid and not in the future; weight must be 0.5 to 200 kg; height 30 to 220 cm; and the measurement position Deitado (lying) or Em pé (standing).
+
+If the same name, date of birth and sex appear with different IDs, column J shows "Possível duplicata: já existe com o ID X" (possible duplicate: already exists with ID X), and the ID and the warning turn amber. Capitalisation and accents do not count as differences. It is only a warning. Column K is a hidden helper column.
+
+The **Cálculo** tab is protected against editing, with no password. In Google Sheets the protection only shows a warning when you edit and does not block. **Banco** runs to row 1501 in Excel and LibreOffice, and to row 1001 in Google Sheets.
+
 Data and calculations live in the same file, so there is nothing to link. The bundled user guide (`.pdf`/`.docx`, in Portuguese) walks through the steps in plain language.
 
 ---

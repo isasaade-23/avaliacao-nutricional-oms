@@ -69,9 +69,17 @@ Também dá para baixar o projeto inteiro pelo botão verde "baixar arquivo ZIP"
 
 ## Como usar
 
-Abra a planilha e vá para a aba **Banco**. Digite as medições, uma linha para cada medição, com ID, sexo, data de nascimento, data da medida, peso e altura. Use sempre o mesmo ID ou número de prontuário para acompanhar a mesma criança ao longo do tempo.
+Abra a planilha e vá para a aba **Banco**. Digite as medições, uma linha para cada medição, com ID, nome, sexo biológico*, data de nascimento, data da medida, peso e altura. Use sempre o mesmo ID ou número de prontuário para acompanhar a mesma criança ao longo do tempo.
 
 Os resultados aparecem na aba **Cálculo**, já com cores. A aba **Ficha** mostra o histórico de uma criança, e a aba **Painel** mostra o resumo da turma. A aba **Instruções** traz o passo a passo dentro da própria planilha.
+
+O sexo biológico é o sexo ao nascer, porque as curvas da OMS são separadas por sexo. A nota completa, com as referências, está na linha 28 da aba **Instruções**.
+
+O Banco confere o que você digita. O nome não aceita números, o sexo aceita só Masculino ou Feminino, as datas precisam ser válidas e não podem estar no futuro, o peso vai de 0,5 a 200 kg, a altura vai de 30 a 220 cm, e a medida é Deitado ou Em pé.
+
+Quando o mesmo nome, a mesma data de nascimento e o mesmo sexo aparecem com IDs diferentes, a coluna J do Banco mostra "Possível duplicata: já existe com o ID X", e o ID e o aviso ficam em âmbar. Maiúsculas e acentos não contam como diferença. É só um aviso, e cabe a você ver se são duas crianças ou a mesma com dois IDs. A coluna K é auxiliar e fica oculta.
+
+A aba **Cálculo** é protegida contra edição, sem senha. No Google Sheets, a proteção só mostra um aviso ao editar e não bloqueia. O Banco vai até a linha 1501 no Excel e no LibreOffice, e até a linha 1001 no Google Sheets.
 
 Como os dados e os cálculos ficam no mesmo arquivo, não há nada para conectar. Guarde a planilha onde preferir e faça cópias de segurança dela como faria com qualquer documento. No Excel, se aparecer o aviso de modo protegido, clique em "Habilitar edição".
 
